@@ -1,0 +1,334 @@
+
+body {
+  margin: 0;
+  font-family: Helvetica, Arial, "LiHei Pro", "黑體-繁", "微軟正黑體", sans-serif;
+  background-color: #b0e0e6;
+}
+
+.home-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.home-video {
+  position: fixed;   
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+
+footer.home-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #b0e0e6;
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+  padding: 10px 100px;
+}
+
+footer.home-footer img {
+  left: 0%;
+  width: 32px;
+  height: 32px;
+  transition: all 0.3s ease;
+}
+
+footer.home-footer img:hover {
+  filter: brightness(1.2);
+  transform: scale(1.1);
+}
+
+.home-buttons {
+  position: absolute;
+  top: 80%;
+  left: 70%;
+  transform: translate(-40%, -50%);
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.home-button {
+  white-space: nowrap;        /* ⬅️ 不讓字換行 */
+  flex-shrink: 1;             /* ⬅️ 遇空間壓力可以縮小一點 */
+  background-color: transparent;
+  color: white;
+  padding: 10px 24px;
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid white;
+  transition: all 0.5s ease;
+  border-radius: 0; /* 取消圓角 */
+}
+
+.home-button:hover {
+  background-color: white;
+  color: black;
+}
+
+
+
+.music-page {
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 60px;
+  font-family: "Helvetica", "Arial","LiHei Pro","黑體-繁","微軟正黑體", sans-serif;
+}
+
+.header-banner {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.header-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nav-bar {
+  position: absolute;
+  top: 30px;
+  right: 60px;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-bar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  padding: 8px 14px;
+}
+
+.nav-bar a:hover {
+  background-color: white;
+  color: black;
+}
+
+.logo-area {
+  position: absolute;
+  top: 20px;
+  left: 40px;
+}
+
+.logo {
+  height: 60px;
+  transition: 0.3s ease;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 8px white);
+}
+
+.album-section {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.album-container {
+  width: 100%;
+  max-width: 1100px; /* 這是讓畫面有收斂效果 */
+}
+
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 40px;
+}
+
+.album-box {
+  text-decoration: none;
+  color: inherit;
+}
+
+.album-thumb {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;    /* 垂直置中 */
+  justify-content: center; /* 水平置中 */
+  transition: 0.3s;
+  overflow: hidden;
+}
+
+
+.album-thumb:hover {
+  filter: brightness(0.7);
+  transform: translateY(-4px);
+}
+
+.album-title {
+  color: white;
+  padding: 10px 15px;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 6px;
+}
+
+
+.album-thumb:hover .album-title {
+  opacity: 1;
+}
+
+
+.music-detail-page {
+  background: linear-gradient(to bottom, #b0e0e6, #004B97);
+  min-height: 100vh;
+  height: auto;   /* 保證頁面延伸時背景不會被截斷 */
+  font-family: "Helvetica", "Arial","LiHei Pro","黑體-繁","微軟正黑體", sans-serif;
+}
+
+.music-detail-content {
+  padding: 40px;
+  color: white;
+  text-align: center;
+}
+
+.music-cover {
+  width: 300px;
+  max-width: 90%;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.embed-section {
+  margin: 40px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.video-page {
+  background: linear-gradient(to bottom, #b0e0e6, #004B97);
+  min-height: 100vh;
+  height: auto;   /* 保證頁面延伸時背景不會被截斷 */
+  font-family: "Helvetica", "Arial","LiHei Pro","黑體-繁","微軟正黑體", sans-serif;
+}
+.video-section {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.video-container {
+  width: 100%;
+  max-width: 1100px;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 40px;
+}
+
+.video-box {
+  text-decoration: none;
+  color: inherit;
+}
+
+.video-thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;    /* 垂直置中 */
+  justify-content: center; /* 水平置中 */
+  border-radius: 6px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  overflow: hidden;
+}
+
+.video-thumb:hover {
+  filter: brightness(0.7);
+  transform: translateY(-4px);
+}
+
+.video-title {
+  color: white;
+  padding: 10px 15px;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 6px;
+}
+
+
+.video-thumb:hover .video-title {
+  opacity: 1;
+}
+
+.video-detail-page {
+  min-height: 100vh;
+  height: auto;   /* 保證頁面延伸時背景不會被截斷 */
+  font-family: "Helvetica", "Arial","LiHei Pro","黑體-繁","微軟正黑體", sans-serif;
+}
+
+.video-detail-content {
+  padding: 40px;
+  color: white;
+  text-align: center;
+}
+
+.common-footer {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 10px 0;
+  margin-top: 60px;
+}
+
+.common-footer img {
+  width: 32px;
+  height: 32px;
+  transition: all 0.3s ease;
+}
+
+.common-footer img:hover {
+  filter: brightness(1.2);
+  transform: scale(1.1);
+}
+
+.basic-page {
+  background: linear-gradient(to bottom, #b0e0e6, #004B97);
+  min-height: 100vh;
+  font-family: "Helvetica", "Arial","LiHei Pro","黑體-繁","微軟正黑體", sans-serif;
+}
+
+.basic-content {
+  padding: 60px 40px;
+  color: white;
+  text-align: center;
+}
+
+.basic-content h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.basic-content p {
+  font-size: 18px;
+  line-height: 1.6;
+}
