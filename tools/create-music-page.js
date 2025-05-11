@@ -4,6 +4,7 @@ const path = require("path");
 const args = require("minimist")(process.argv.slice(2));
 
 const { slug, title, cover, youtube, spotify } = args;
+// node create-music-page.js --slug=allmyfault --title="" --cover=.png --youtube="" --spotify=""
 
 if (!slug || !title) {
   console.error("❌ 請輸入 --slug、--title、--cover、--youtube和--spotify");

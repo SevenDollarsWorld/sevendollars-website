@@ -3,6 +3,7 @@ const path = require("path");
 const args = require("minimist")(process.argv.slice(2));
 
 const { slug, title, cover, instagram } = args;
+// node create-video-page.js --slug=seventosmoke --title="" --cover=seventosmoke.jpg --instagram=""
 
 if (!slug || !title || !instagram) {
   console.error("❌ 請輸入 --slug、--title、--cover和 --instagram");
