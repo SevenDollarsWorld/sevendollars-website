@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
+import Logo from '../components/Logo'
 import '../style.css'
 
 function MusicCollection() {
@@ -44,9 +45,7 @@ function MusicCollection() {
       
       <div className="header-banner">
         <img src="/header-bg.jpg" alt="Header Background" />
-        <div className="logo-area">
-          <img src="/logo.png" alt="Logo" className="logo" />
-        </div>
+        
         <nav className="nav-bar">
           <a href="/">Home</a>
           <a href="/music-collection">Music Collection</a>
@@ -72,6 +71,8 @@ function MusicCollection() {
   </div>
 </section>
 <div className="music-page"></div>
+
+    <Logo />
     <Footer />
 
     </div>

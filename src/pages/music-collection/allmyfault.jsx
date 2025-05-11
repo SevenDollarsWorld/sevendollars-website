@@ -2,6 +2,7 @@
 import React from 'react'
 import '../../style.css'
 import Footer from '../../components/Footer'
+import Logo from '../../components/Logo'
 
 function AllmyfaultMusic() {
   return (
@@ -9,9 +10,7 @@ function AllmyfaultMusic() {
       {/* 頁面頭部 */}
       <div className="header-banner">
         <img src="/header-bg.jpg" alt="Header Background" />
-        <div className="logo-area">
-          <img src="/logo.png" alt="Logo" className="logo" />
-        </div>
+        
         <nav className="nav-bar">
           <a href="/">Home</a>
           <a href="/music-collection">Music Collection</a>
@@ -30,6 +29,7 @@ function AllmyfaultMusic() {
         <iframe style={{ borderRadius: '12px' }} src="https://open.spotify.com/embed/album/72TppeuIzivA2UXIxyeYhf?utm_source=generator" width="100%" height="352" frameBorder="0" loading="lazy"></iframe>
       </div>
       <div className="music-page"></div>
+      <Logo />
       <Footer />
     </div>
     </div>

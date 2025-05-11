@@ -1,6 +1,7 @@
 import React from 'react'
 import '../../style.css'
 import Footer from '../../components/Footer'
+import Logo from '../../components/Logo'
 
 function OceanMusic() {
   return (
@@ -8,9 +9,7 @@ function OceanMusic() {
       {/* 頁面頭部 */}
       <div className="header-banner">
         <img src="/header-bg.jpg" alt="Header Background" />
-        <div className="logo-area">
-          <img src="/logo.png" alt="Logo" className="logo" />
-        </div>
+        
         <nav className="nav-bar">
           <a href="/">Home</a>
           <a href="/music-collection">Music Collection</a>
@@ -28,6 +27,7 @@ function OceanMusic() {
         <iframe style={{ borderRadius: '12px' }} src="https://open.spotify.com/embed/album/6fpPj1AKZfuSDxbDjFo53B" width="100%" height="352" frameBorder="0" loading="lazy"></iframe>
       </div>
       <div className="music-page"></div>
+      <Logo />
       <Footer />
     </div>
   )

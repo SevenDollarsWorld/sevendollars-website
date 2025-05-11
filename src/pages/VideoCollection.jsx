@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
+import Logo from '../components/Logo'
 import '../style.css'
 
 function VideoCollection() {
@@ -20,9 +21,7 @@ function VideoCollection() {
     <div className="basic-page">
       <div className="header-banner">
         <img src="/header-bg.jpg" alt="Header Background" />
-        <div className="logo-area">
-          <img src="/logo.png" alt="Logo" className="logo" />
-        </div>
+        
         <nav className="nav-bar">
           <a href="/">Home</a>
           <a href="/music-collection">Music Collection</a>
@@ -30,6 +29,7 @@ function VideoCollection() {
           <a href="/about">About</a>
           <a href="/contact">Contact</a>
         </nav>
+        
       </div>
 
       <section className="video-section">
@@ -50,6 +50,7 @@ function VideoCollection() {
 </section>
 
       <div className="music-page"></div>
+      <Logo />
     <Footer />
     </div>
     

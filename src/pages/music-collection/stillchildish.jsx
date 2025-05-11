@@ -1,6 +1,7 @@
 import React from 'react'
 import '../../style.css'
 import Footer from '../../components/Footer'
+import Logo from '../../components/Logo'
 
 
 function StillChildishMusic() {
@@ -9,9 +10,7 @@ function StillChildishMusic() {
       {/* 頁面頭部 */}
       <div className="header-banner">
         <img src="/header-bg.jpg" alt="Header Background" />
-        <div className="logo-area">
-          <img src="/logo.png" alt="Logo" className="logo" />
-        </div>
+        
         <nav className="nav-bar">
           <a href="/">Home</a>
           <a href="/music-collection">Music Collection</a>
@@ -48,6 +47,7 @@ function StillChildishMusic() {
         </div>
       </div>
       <div className="music-page"></div>
+      <Logo />
     <Footer />
     </div>
   )

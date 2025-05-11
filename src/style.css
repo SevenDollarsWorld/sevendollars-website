@@ -126,8 +126,11 @@ footer.home-footer img:hover {
 }
 
 .logo {
-  height: 60px;
-  transition: 0.3s ease;
+  position: absolute;
+  left: 20px;
+  z-index: 1000;
+  width: 100px;     /* 控制顯示大小 */
+  height: auto;     /* 等比例縮放 */
 }
 
 .logo:hover {

@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react'
 import '../../style.css'
 import Footer from '../../components/Footer'
+import Logo from '../../components/Logo'
 
 function VogueviralvideoVideo() {
   useEffect(() => {
@@ -19,9 +20,7 @@ function VogueviralvideoVideo() {
     <div className="video-detail-page">
     <div className="header-banner">
         <img src="/header-bg.jpg" alt="Header Background" />
-        <div className="logo-area">
-          <img src="/logo.png" alt="Logo" className="logo" />
-        </div>
+        
         <nav className="nav-bar">
           <a href="/">Home</a>
           <a href="/music-collection">Music Collection</a>
@@ -42,6 +41,7 @@ function VogueviralvideoVideo() {
         ></blockquote>
         <script async src="//www.instagram.com/embed.js"></script>
       </div>
+      <Logo />
       <Footer />
     </div>
   )
