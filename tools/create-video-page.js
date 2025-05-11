@@ -19,7 +19,7 @@ const template = `
 import React, { useEffect } from 'react'
 import '../../style.css'
 import Footer from '../../components/Footer'
-import Logo from '../components/Logo'
+import Logo from '../../components/Logo'
 
 function ${componentName}Video() {
   useEffect(() => {
@@ -63,7 +63,7 @@ function ${componentName}Video() {
       <Footer />
     </div>
   )
-}
+} 
 
 export default ${componentName}Video
 `;
@@ -97,7 +97,7 @@ console.log(`✅ Route 插入 App.jsx 完成: ${routeEntry}`);
 let vcContent = fs.readFileSync(vcPath, "utf8");
 const cardEntry = `  {
     title: "${title}",
-    cover: "/${cover}.jpg",
+    cover: "/${cover}",
     path: "/video-collection/${slug}"
   },`;
 
