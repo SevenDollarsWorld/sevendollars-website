@@ -5,10 +5,36 @@ import '../style.css'
 
 function MusicCollection() {
   const albums = [
+  
     {
-      title: "SEVEN DOLLARS - Still Childish",
+      title: "SEVEN DOLLARS - Still Childish Album",
       cover: "/stillchildish-cover-800x800.jpg",
       path: "/music-collection/stillchildish"
+    },
+    {
+      title: "SEVEN DOLLARS - Stars, Planet, Universe Album",
+      cover: "/spu-cover.jpg",
+      path: "/music-collection/starsplanetuniverse"
+    },
+    {
+      title: "SEVEN DOLLARS - Stars, Planet, Universe Album",
+      cover: "/oceancover.jpg",
+      path: "/music-collection/ocean"
+    },
+    {
+      title: "SEVEN DOLLARS - Make It",
+      cover: "/makeit.png",
+      path: "/music-collection/makeit"
+    },
+    {
+      title: "SEVEN DOLLARS - All My Fault",
+      cover: "/allmyfault.jpg",
+      path: "/music-collection/allmyfault"
+    },
+    {
+    title: "SEVEN DOLLARS - I'm Done",
+    cover: "/imdonecover.jpg",
+    path: "/music-collection/imdone"
     },
     // 之後可在這邊新增更多作品
   ]

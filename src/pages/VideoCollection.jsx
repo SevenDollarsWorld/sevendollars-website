@@ -9,9 +9,13 @@ function VideoCollection() {
       title: "SEVEN DOLLARS - Still Childish",
       cover: "/stillchildish-cover.jpg",
       path: "/video-collection/stillchildish"
-    }
+    },
+    {
+    title: "Vogue Viral Video",
+    cover: "/vogue.jpg",
+    path: "/video-collection/vogueviralvideo"
+    },
   ]
-
   return (
     <div className="basic-page">
       <div className="header-banner">

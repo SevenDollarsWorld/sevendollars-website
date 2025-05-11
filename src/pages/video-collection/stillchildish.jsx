@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import '../../style.css'
+import Footer from '../../components/Footer'
 
 
 function StillChildishVideo() {
@@ -45,6 +46,7 @@ function StillChildishVideo() {
         ></blockquote>
         <script async src="//www.instagram.com/embed.js"></script>
       </div>
+      <Footer />
     </div>
   )
 }
