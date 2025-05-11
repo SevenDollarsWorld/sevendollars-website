@@ -32,6 +32,24 @@ function App() {
   <Route path="/music-collection/imdone" element={<ImdoneMusic />} />
 
   <Route path="/video-collection/vogueviralvideo" element={<VogueviralvideoVideo />} />
+
+  <Route path="/video-collection/seventosmoke" element={<SeventosmokeVideo />} />
+
+  <Route path="/music-collection/deadsingle" element={<DeadsingleMusic />} />
+
+  <Route path="/music-collection/tellme" element={<TellmeMusic />} />
+
+  <Route path="/music-collection/fakelove" element={<FakeloveMusic />} />
+
+  <Route path="/music-collection/realsound" element={<RealsoundMusic />} />
+
+  <Route path="/music-collection/tdatn" element={<TdatnMusic />} />
+
+  <Route path="/music-collection/holdmysmoke" element={<HoldmysmokeMusic />} />
+
+  <Route path="/music-collection/dorm" element={<DormMusic />} />
+
+  <Route path="/music-collection/raporatory" element={<RaporatoryMusic />} />
 </Routes>
   )
 }
@@ -42,3 +60,20 @@ import MakeitMusic from './pages/music-collection/makeit';
 import AllmyfaultMusic from './pages/music-collection/allmyfault';
 import ImdoneMusic from './pages/music-collection/imdone';
 import VogueviralvideoVideo from './pages/video-collection/vogueviralvideo';
+import SeventosmokeVideo from './pages/video-collection/seventosmoke';
+import DeadsingleMusic from './pages/music-collection/deadsingle';
+import TellmeMusic from './pages/music-collection/tellme';
+import FakeloveMusic from './pages/music-collection/fakelove';
+import RealsoundMusic from './pages/music-collection/realsound';
+import TdatnMusic from './pages/music-collection/tdatn';
+import HoldmysmokeMusic from './pages/music-collection/holdmysmoke';
+import DormMusic from './pages/music-collection/dorm';
+import RaporatoryMusic from './pages/music-collection/raporatory';
+
+
+
+
+
+
+
+

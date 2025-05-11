@@ -7,7 +7,7 @@ import '../style.css'
 function MusicCollection() {
   const albums = [
   
-    {
+{
       title: "SEVEN DOLLARS - Still Childish Album",
       cover: "/stillchildish-cover-800x800.jpg",
       path: "/music-collection/stillchildish"
@@ -23,6 +23,11 @@ function MusicCollection() {
       path: "/music-collection/ocean"
     },
     {
+    title: "Seven Dollars - Raporatory Album",
+    cover: "/raporatory.jpg",
+    path: "/music-collection/raporatory"
+  },
+    {
       title: "SEVEN DOLLARS - Make It",
       cover: "/makeit.png",
       path: "/music-collection/makeit"
@@ -37,8 +42,44 @@ function MusicCollection() {
     cover: "/imdonecover.jpg",
     path: "/music-collection/imdone"
     },
+    {
+    title: "Seven Dollars - 彌留Dying",
+    cover: "/dead.jpg",
+    path: "/music-collection/deadsingle"
+    },
+    {
+    title: "Seven Dollars - Tell Me ft. Drordie",
+    cover: "/tellme.jpeg",
+    path: "/music-collection/tellme"
+  },
+  {
+    title: "Seven Dollars - Fake Love",
+    cover: "/fakelove.jpg",
+    path: "/music-collection/fakelove"
+  },
+  {
+    title: "Seven Dollars - Real Sound",
+    cover: "/realsound.jpg",
+    path: "/music-collection/realsound"
+  },
+  {
+    title: "Seven Dollars - 夢魘後的魔鬼The Demon After The Nightmare",
+    cover: "/tdatn.jpg",
+    path: "/music-collection/tdatn"
+  },
+  {
+    title: "Seven Dollars - Hold My Smoke",
+    cover: "/hms.jpg",
+    path: "/music-collection/holdmysmoke"
+  },
+  {
+    title: "Seven Dollars - 宿舍Dorm",
+    cover: "/dorm.jpg",
+    path: "/music-collection/dorm"
+  },
+  
     // 之後可在這邊新增更多作品
-  ]
+]
 
   return (
     <div className="basic-page">

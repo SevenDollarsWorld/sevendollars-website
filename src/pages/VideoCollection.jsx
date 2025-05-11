@@ -6,7 +6,12 @@ import '../style.css'
 
 function VideoCollection() {
   const videos = [
-    {
+  {
+    title: "Seven To Smoke Dance Challenge",
+    cover: "/seventosmoke.jpg",
+    path: "/video-collection/seventosmoke"
+  },
+{
       title: "SEVEN DOLLARS - Still Childish",
       cover: "/stillchildish-cover.jpg",
       path: "/video-collection/stillchildish"
@@ -16,7 +21,7 @@ function VideoCollection() {
     cover: "/vogue.jpg",
     path: "/video-collection/vogueviralvideo"
     },
-  ]
+]
   return (
     <div className="basic-page">
       <div className="header-banner">
