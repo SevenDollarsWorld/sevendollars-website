@@ -19,26 +19,26 @@ const template = `
 import React, { useEffect } from 'react'
 import '../../style.css'
 import Footer from '../../components/Footer'
+import Logo from '../components/Logo'
 
 function ${componentName}Video() {
   useEffect(() => {
-    if (!window.instgrm) {
-      const script = document.createElement('script');
-      script.setAttribute('src', '//www.instagram.com/embed.js');
-      script.async = true;
-      document.body.appendChild(script);
-    } else {
-      window.instgrm.Embeds.process();
-    }
-  }, []);
+        // 檢查 ig embed.js 是否已載入過，避免重複載
+        if (!window.instgrm) {
+          const script = document.createElement('script')
+          script.setAttribute('src', '//www.instagram.com/embed.js')
+          script.setAttribute('async', '')
+          document.body.appendChild(script)
+        } else {
+          window.instgrm.Embeds.process()
+        }
+      }, [])
 
   return (
     <div className="video-detail-page">
     <div className="header-banner">
         <img src="/header-bg.jpg" alt="Header Background" />
-        <div className="logo-area">
-          <img src="/logo.png" alt="Logo" className="logo" />
-        </div>
+        
         <nav className="nav-bar">
           <a href="/">Home</a>
           <a href="/music-collection">Music Collection</a>
@@ -59,6 +59,7 @@ function ${componentName}Video() {
         ></blockquote>
         <script async src="//www.instagram.com/embed.js"></script>
       </div>
+      <Logo />
       <Footer />
     </div>
   )

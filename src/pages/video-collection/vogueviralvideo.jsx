@@ -6,15 +6,16 @@ import Logo from '../../components/Logo'
 
 function VogueviralvideoVideo() {
   useEffect(() => {
-    if (!window.instgrm) {
-      const script = document.createElement('script');
-      script.setAttribute('src', '//www.instagram.com/embed.js');
-      script.async = true;
-      document.body.appendChild(script);
-    } else {
-      window.instgrm.Embeds.process();
-    }
-  }, []);
+      // 檢查 ig embed.js 是否已載入過，避免重複載
+      if (!window.instgrm) {
+        const script = document.createElement('script')
+        script.setAttribute('src', '//www.instagram.com/embed.js')
+        script.setAttribute('async', '')
+        document.body.appendChild(script)
+      } else {
+        window.instgrm.Embeds.process()
+      }
+    }, [])
 
   return (
     <div className="video-detail-page">

@@ -20,6 +20,7 @@ const template = `
 import React from 'react'
 import '../../style.css'
 import Footer from '../../components/Footer'
+import Logo from '../../components/Logo'
 
 function ${componentName}Music() {
   return (
@@ -48,6 +49,7 @@ function ${componentName}Music() {
         <iframe style={{ borderRadius: '12px' }} src="${spotify}" width="100%" height="352" frameBorder="0" loading="lazy"></iframe>
       </div>
       <div className="music-page"></div>
+      <Logo />
       <Footer />
     </div>
     </div>
