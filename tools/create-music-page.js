@@ -101,7 +101,7 @@ const albumEntry = `  {
   },`;
 if (!mcContent.includes(`path: "/music-collection/${slug}"`)) {
   mcContent = mcContent.replace(/const albums = \[([\s\S]*?)\]/, (match, inner) => {
-    return `const albums = [\n${albumEntry}\n${inner.trim()}`;
+    return `const albums = [\n${albumEntry}\n${inner.trim()}\n]`;
   });
   fs.writeFileSync(mcPath, mcContent, "utf8");
   console.log("✅ Album 項目已插入 MusicCollection.jsx");
