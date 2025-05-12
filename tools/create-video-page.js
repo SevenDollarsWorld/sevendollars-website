@@ -2,15 +2,31 @@ const fs = require("fs");
 const path = require("path");
 const args = require("minimist")(process.argv.slice(2));
 
-const { slug, title, cover, instagram } = args;
-// node create-video-page.js --slug=seventosmoke --title="" --cover=seventosmoke.jpg --instagram=""
+const { slug, title, cover, instagram, type } = args;
+// 範例：node create-video-page.js --slug=seventosmoke --title="..." --cover=xxx.jpg --instagram="..." --type=music
 
-if (!slug || !title || !instagram) {
-  console.error("❌ 請輸入 --slug、--title、--cover和 --instagram");
+if (!slug || !title || !cover || !instagram || !type) {
+  console.error("❌ 請輸入 --slug、--title、--cover、--instagram 和 --type=(music|dance|food|funny|other)");
   process.exit(1);
 }
 
-const componentName = slug.replace(/(^\w|[-_]\w)/g, s => s.replace(/[-_]/, "").toUpperCase());
+const validTypes = ["music", "dance", "food", "funny", "other"];
+if (!validTypes.includes(type)) {
+  console.error("❌ --type 必須是 music, dance, food, funny 或 other");
+  process.exit(1);
+}
+
+const typeMap = {
+  music: "musicvideos",
+  dance: "dancevideos",
+  food: "foodvideos",
+  funny: "funnyvideos",
+  other: "othervideos"
+};
+
+const componentName = slug.replace(/(^\w|[-_]\w)/g, (s) =>
+  s.replace(/[-_]/, "").toUpperCase()
+);
 const pagePath = `./pages/video-collection/${slug}`;
 const outPath = path.join(__dirname, `../src/pages/video-collection/${slug}.jsx`);
 const appPath = path.join(__dirname, "../src/App.jsx");
@@ -78,23 +94,29 @@ let appContent = fs.readFileSync(appPath, "utf8");
 const importStatement = `import ${componentName}Video from '${pagePath}';`;
 
 if (!appContent.includes(importStatement)) {
-  const lines = appContent.split('\n');
-  const lastImportIndex = [...lines].reverse().findIndex(line => line.startsWith("import"));
+  const lines = appContent.split("\n");
+  const lastImportIndex = [...lines]
+    .reverse()
+    .findIndex((line) => line.startsWith("import"));
   const insertIndex = lines.length - lastImportIndex;
   lines.splice(insertIndex, 0, importStatement);
-  appContent = lines.join('\n');
+  appContent = lines.join("\n");
 }
 
 const routeEntry = `<Route path="/video-collection/${slug}" element={<${componentName}Video />} />`;
 if (!appContent.includes(routeEntry)) {
-  appContent = appContent.replace(/<Routes>([\s\S]*?)<\/Routes>/, (match, inner) => {
-    return `<Routes>${inner}\n  ${routeEntry}\n</Routes>`;
-  });
+  appContent = appContent.replace(
+    /<Routes>([\s\S]*?)<\/Routes>/,
+    (match, inner) => {
+      return `<Routes>${inner}\n  ${routeEntry}\n</Routes>`;
+    }
+  );
 }
 fs.writeFileSync(appPath, appContent, "utf8");
 console.log(`✅ Route 插入 App.jsx 完成: ${routeEntry}`);
 
-// 插入 VideoCollection.jsx 卡片
+// 插入對應分類
+const vcCategory = typeMap[type];
 let vcContent = fs.readFileSync(vcPath, "utf8");
 const cardEntry = `  {
     title: "${title}",
@@ -103,12 +125,12 @@ const cardEntry = `  {
   },`;
 
 if (!vcContent.includes(`path: "/video-collection/${slug}"`)) {
-  vcContent = vcContent.replace(/const videos = \[([\s\S]*?)\]/, (match, inner) => {
-  return `const videos = [\n${cardEntry}\n${inner.trim()}\n]`;
-});
-
+  const regex = new RegExp(`const ${vcCategory} = \\[([\\s\\S]*?)\\]`);
+  vcContent = vcContent.replace(regex, (match, inner) => {
+    return `const ${vcCategory} = [\n${cardEntry}\n${inner.trim()}\n]`;
+  });
   fs.writeFileSync(vcPath, vcContent, "utf8");
-  console.log("✅ 卡片成功新增至 VideoCollection.jsx");
+  console.log(`✅ 卡片成功新增至 ${vcCategory}`);
 } else {
-  console.log("⚠️ Video 卡片已存在，未重複插入");
+  console.log(`⚠️ 該影片已存在於 ${vcCategory}，未重複插入`);
 }

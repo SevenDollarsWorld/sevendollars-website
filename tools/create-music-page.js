@@ -1,4 +1,3 @@
-
 const fs = require("fs");
 const path = require("path");
 const args = require("minimist")(process.argv.slice(2));
@@ -12,9 +11,14 @@ if (!slug || !title) {
 }
 const mcPath = path.join(__dirname, "../src/pages/MusicCollection.jsx");
 
-const componentName = slug.replace(/(^\w|[-_]\w)/g, s => s.replace(/[-_]/, "").toUpperCase());
+const componentName = slug.replace(/(^\w|[-_]\w)/g, (s) =>
+  s.replace(/[-_]/, "").toUpperCase()
+);
 const pagePath = `./pages/music-collection/${slug}`;
-const outPath = path.join(__dirname, `../src/pages/music-collection/${slug}.jsx`);
+const outPath = path.join(
+  __dirname,
+  `../src/pages/music-collection/${slug}.jsx`
+);
 const appPath = path.join(__dirname, "../src/App.jsx");
 
 const template = `
@@ -71,22 +75,24 @@ let appContent = fs.readFileSync(appPath, "utf8");
 const importStatement = `import ${componentName}Music from '${pagePath}';\n`;
 
 if (!appContent.includes(importStatement)) {
-  const lines = appContent.split('\n');
-const lastImportIndex = [...lines].reverse().findIndex(line => line.startsWith('import'));
-const insertIndex = lines.length - lastImportIndex;
-lines.splice(insertIndex, 0, importStatement);
-appContent = lines.join('\n');
-
+  const lines = appContent.split("\n");
+  const lastImportIndex = [...lines]
+    .reverse()
+    .findIndex((line) => line.startsWith("import"));
+  const insertIndex = lines.length - lastImportIndex;
+  lines.splice(insertIndex, 0, importStatement);
+  appContent = lines.join("\n");
 }
-
-
 
 // 加 Route
 const routeEntry = `<Route path="/music-collection/${slug}" element={<${componentName}Music />} />`;
 if (!appContent.includes(routeEntry)) {
-  appContent = appContent.replace(/<Routes>([\s\S]*?)<\/Routes>/, (match, inner) => {
-    return `<Routes>${inner}\n  ${routeEntry}\n</Routes>`;
-  });
+  appContent = appContent.replace(
+    /<Routes>([\s\S]*?)<\/Routes>/,
+    (match, inner) => {
+      return `<Routes>${inner}\n  ${routeEntry}\n</Routes>`;
+    }
+  );
 }
 
 fs.writeFileSync(appPath, appContent, "utf8");
@@ -100,12 +106,14 @@ const albumEntry = `  {
     path: "/music-collection/${slug}"
   },`;
 if (!mcContent.includes(`path: "/music-collection/${slug}"`)) {
-  mcContent = mcContent.replace(/const albums = \[([\s\S]*?)\]/, (match, inner) => {
-    return `const albums = [\n${albumEntry}\n${inner.trim()}\n]`;
-  });
+  mcContent = mcContent.replace(
+    /const albums = \[([\s\S]*?)\]/,
+    (match, inner) => {
+      return `const albums = [\n${albumEntry}\n${inner.trim()}\n]`;
+    }
+  );
   fs.writeFileSync(mcPath, mcContent, "utf8");
   console.log("✅ Album 項目已插入 MusicCollection.jsx");
 } else {
   console.log("⚠️ Album 項目已存在，未重複插入");
 }
-
