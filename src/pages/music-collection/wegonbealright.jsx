@@ -1,0 +1,41 @@
+
+import React from 'react'
+import '../../style.css'
+import Footer from '../../components/Footer'
+import Logo from '../../components/Logo'
+
+function WegonbealrightMusic() {
+  return (
+  <div className="music-detail-page">
+      {/* 頁面頭部 */}
+      <div className="header-banner">
+        <img src="/header-bg.jpg" alt="Header Background" />
+        <div className="logo-area">
+          <img src="/logo.png" alt="Logo" className="logo" />
+        </div>
+        <nav className="nav-bar">
+          <a href="/">Home</a>
+          <a href="/music-collection">Music Collection</a>
+          <a href="/video-collection">Video Collection</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+        </nav>
+      </div>
+      {/* 專輯內容 */}
+    <div className="music-detail-page">
+      <div className="music-detail-content">
+        <img src="/wegonbealright.jpg" alt="We Gon Be Alright Cover" className="music-cover" />
+        <h1>We Gon Be Alright</h1>
+        <p>這裡是介紹內容...</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/okiJQ5ll_WQ?si=Qqr5aff0tcguWSGE" frameBorder="0" allowFullScreen></iframe>
+        <iframe style={{ borderRadius: '12px' }} src="https://open.spotify.com/embed/album/2IZ0UcBlxYekAyhS4sLc8c?utm_source=generator" width="100%" height="352" frameBorder="0" loading="lazy"></iframe>
+      </div>
+      <div className="music-page"></div>
+      <Logo />
+      <Footer />
+    </div>
+    </div>
+  )
+}
+
+export default WegonbealrightMusic
