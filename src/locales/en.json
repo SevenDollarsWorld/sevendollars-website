@@ -1,5 +1,26 @@
 {
   "home": "Home",
-  "music": "Music",
-  "about": "About"
+  "music": "Music Collection",
+  "video": "Video Collection",
+  "merch": "Merch",
+  "about": "About",
+  "contact": "Contact",
+  "musicCollection":{
+    "albums": "Albums",
+    "singles": "Singles"
+  },
+  "musicCollectionAlbum":{
+    "stillChildishContent":"Not just immaturity, but a choice—to keep rebellion and wonder pure.\nThis is a chronicle of a growth unwilling to forget,\na journey through nights and rain in a reckless city,\nthrough relationships, doubt, dreams, and lies,\nonly to return to the self who never stopped being curious,\nnever stopped being sincere.\nI’m learning to become a grown-up,\nbut I refuse to let my childlike heart rot in reality.\nEven if this world teaches me composure, distance, and silence,\nI still choose passion, chaos, and truth.\nIt’s not that I haven’t grown up—I’ve simply chosen not to forget.\nProduced by Seven Dollars 七元\nFeaturing: Moonchild, Drordie, Tdot",
+    "spuTitle": "SEVEN DOLLARS - Stars, Planet, Universe",
+    "spuContent": "\"A soul ritual woven from stars and tears — a deep dive into fate, dreams, and the true self.\"\n\nIn the depths of the stars, dreams whisper and hearts pulse.\nThis is more than an album — it's a journey into the subconscious, reaching the edge of the universe.\n\n*Stars, Planet, Universe* takes 'dream' as its guiding thread,\nescaping, falling, resisting, and finally confronting nightmares to complete the self.\nThe intro, \"Stars, Planet, Universe,\" opens the dreamscape in collaboration with Moonchild;\n\"Stay with you\" and \"Heartbeats\" capture fleeting moments of infatuation and desire;\n\"Player One\" explores the self ensnared by temptation.\n\nIn the middle act, \"Dream in Charge\" and \"The Tenth Planet\" lead listeners beyond gravity,\ntoward the outer realms of imagination.\n\"The Demon After the Nightmare\" and \"The End Of The World\"\nreveal the darkness lurking behind dreams and myths of destruction.\n\nThe final chapter, *The Dream Completion Plan*, includes the dual tracks \"Catastrophe\" and \"Rebirth\",\nsymbolizing the cycle’s closure.\nWhen dreams collapse, can we rise again from their ruins?\nYou'll find this is more than a sonic experience — it’s a meditation on existence itself.\nProduced by Seven Dollars 七元\nFeaturing: Moonchild, Little Q",
+    "oceanTitle": "SEVEN DOLLARS - Ocean",
+    "oceanContent": "\"Ocean\" is a sonic journey through sinking consciousness, emotional escape, and the emergence of love.\nFrom the opening track \"Mind (Intro),\" the listener is pulled into a deep dive where thoughts and sounds intertwine.\n\"Surfing\" captures the struggle to stay balanced,\nwhile \"Pits and Holes\" and \"Stranded\" explore chapters of hurt and emotional stagnation.\n\nThen comes the fifth track, \"Meteor (ft. Moonchild),\" where light pierces the deep sea.\nA radiant love song, it lands like a meteor into dark waters, yet lights up the entire abyss.\nThis love is not salvation, but the act of finding direction in shared disorientation —\nthe brightest moment of the album.\n\n\"Take Away\" follows with the echo of gratitude — both a farewell and a keepsake.\n\"13k Feet Under\" and \"Deeper\" plunge again into inner depths.\n\"2AM\" releases what’s been repressed, a midnight confession of the soul.\nAnd the final track, \"Abyss,\" isn’t an end but a surrender:\neven if the heart sinks like the sea, I still remember the star that once lit my world."
+  },
+  "videoCollection":{
+    "funny": "Funny Videos & Reels",
+    "music": "Music Videos & Reels",
+    "dance": "Dance Videos & Reels",
+    "food": "About Cooking",
+    "other": "Other Types of Videos & Reels"
+  }
 }

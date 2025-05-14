@@ -5,9 +5,11 @@ import Logo from "../components/Logo";
 import "../style.css";
 import { useContext } from "react";
 import { ThemeContext } from "../App"; // 注意路徑
+import { useTranslation } from "react-i18next";
 
 function VideoCollection() {
   const { theme } = useContext(ThemeContext);
+  const { t } = useTranslation();
   const musicvideos = [
     {
       title: "西門發送專輯企劃 Edit By YB",
@@ -108,17 +110,17 @@ function VideoCollection() {
           className="header-image"
         />
         <nav className="nav-bar">
-          <a href="/">Home</a>
-          <a href="/music-collection">Music Collection</a>
-          <a href="/video-collection">Video Collection</a>
-          <a href="/about">About</a>
-          <a href="/contact">Contact</a>
+          <a href="/">{t('home')}</a>
+          <a href="/music-collection">{t('music')}</a>
+          <a href="/video-collection">{t('video')}</a>
+          <a href="/about">{t('about')}</a>
+          <a href="/contact">{t('contact')}</a>
         </nav>
       </div>
 
       <section className="video-section">
         <div className="video-container">
-          <h2 className="section-title">搞笑影片</h2>
+          <h2 className="section-title">{t('videoCollection.funny')}</h2>
           <div className="video-grid">
             {funnyvideos.map((funnyvideo, index) => (
               <Link to={funnyvideo.path} className="video-box" key={index}>
@@ -136,7 +138,7 @@ function VideoCollection() {
 
       <section className="video-section">
         <div className="video-container">
-          <h2 className="section-title">音樂相關影片</h2>
+          <h2 className="section-title">{t('videoCollection.music')}</h2>
           <div className="video-grid">
             {musicvideos.map((musicvideo, index) => (
               <Link to={musicvideo.path} className="video-box" key={index}>
@@ -154,7 +156,7 @@ function VideoCollection() {
 
       <section className="video-section">
         <div className="video-container">
-          <h2 className="section-title">七元食堂</h2>
+          <h2 className="section-title">{t('videoCollection.food')}</h2>
           <div className="video-grid">
             {foodvideos.map((foodvideo, index) => (
               <Link to={foodvideo.path} className="video-box" key={index}>
@@ -172,7 +174,7 @@ function VideoCollection() {
 
       <section className="video-section">
         <div className="video-container">
-          <h2 className="section-title">跳舞相關影片</h2>
+          <h2 className="section-title">{t('videoCollection.dance')}</h2>
           <div className="video-grid">
             {dancevideos.map((dancevideo, index) => (
               <Link to={dancevideo.path} className="video-box" key={index}>
@@ -190,7 +192,7 @@ function VideoCollection() {
 
       <section className="video-section">
         <div className="video-container">
-          <h2 className="section-title">其他影片</h2>
+          <h2 className="section-title">{t('videoCollection.other')}</h2>
           <div className="video-grid">
             {othervideos.map((othervideo, index) => (
               <Link to={othervideo.path} className="video-box" key={index}>

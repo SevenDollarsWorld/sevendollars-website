@@ -7,6 +7,11 @@ body {
   background-color: #b0e0e6;
 }
 
+.album-description {
+  white-space: pre-wrap; /* 讓 \n 換行 */
+  line-height: 1.6;       /* 行距看起來舒服一點 */
+}
+
 .home-container {
   position: relative;
   width: 100vw;

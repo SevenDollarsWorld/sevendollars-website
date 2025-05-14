@@ -5,9 +5,11 @@ import Logo from "../components/Logo";
 import "../style.css";
 import { useContext } from "react";
 import { ThemeContext } from "../App"; // 注意路徑
+import { useTranslation } from "react-i18next";
 
 function MusicCollection() {
   const { theme } = useContext(ThemeContext);
+  const { t } = useTranslation();
   const albums = [
     {
       title: "SEVEN DOLLARS - Still Childish Album",
@@ -20,7 +22,7 @@ function MusicCollection() {
       path: "/music-collection/starsplanetuniverse",
     },
     {
-      title: "SEVEN DOLLARS - Stars, Planet, Universe Album",
+      title: "SEVEN DOLLARS - Ocean Album",
       cover: "/oceancover.jpg",
       path: "/music-collection/ocean",
     },
@@ -121,17 +123,17 @@ function MusicCollection() {
         />
 
         <nav className="nav-bar">
-          <a href="/">Home</a>
-          <a href="/music-collection">Music Collection</a>
-          <a href="/video-collection">Video Collection</a>
-          <a href="/about">About</a>
-          <a href="/contact">Contact</a>
+          <a href="/">{t('home')}</a>
+          <a href="/music-collection">{t('music')}</a>
+          <a href="/video-collection">{t('video')}</a>
+          <a href="/about">{t('about')}</a>
+          <a href="/contact">{t('contact')}</a>
         </nav>
       </div>
       <section className="album-section">
         <div className="album-wrapper">
           <div className="album-container">
-            <h2 className="section-title">Albums</h2>
+            <h2 className="section-title">{t('musicCollection.albums')}</h2>
             <div className="album-grid">
               {albums.map((album, index) => (
                 <Link to={album.path} className="album-box" key={index}>
@@ -151,7 +153,7 @@ function MusicCollection() {
       <section className="album-section">
         <div className="album-wrapper">
           <div className="album-container">
-            <h2 className="section-title">Singles</h2>
+            <h2 className="section-title">{t('musicCollection.singles')}</h2>
             <div className="album-grid">
               {singlesList.map((single, index) => (
                 <Link to={single.path} className="album-box" key={index}>

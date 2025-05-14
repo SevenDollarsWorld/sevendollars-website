@@ -4,9 +4,11 @@ import Footer from "../components/Footer";
 import Logo from "../components/Logo";
 import { useContext } from "react";
 import { ThemeContext } from "../App"; // 注意路徑
+import { useTranslation } from "react-i18next";
 
 function Contact() {
   const { theme } = useContext(ThemeContext);
+  const { t } = useTranslation();
   return (
     <div className="basic-page" style={{ background: theme.gradient }}>
       <div
@@ -17,11 +19,11 @@ function Contact() {
         }}
       >
         <nav className="nav-bar">
-          <a href="/">Home</a>
-          <a href="/music-collection">Music Collection</a>
-          <a href="/video-collection">Video Collection</a>
-          <a href="/about">About</a>
-          <a href="/contact">Contact</a>
+          <a href="/">{t('home')}</a>
+          <a href="/music-collection">{t('music')}</a>
+          <a href="/video-collection">{t('video')}</a>
+          <a href="/about">{t('about')}</a>
+          <a href="/contact">{t('contact')}</a>
         </nav>
       </div>
 

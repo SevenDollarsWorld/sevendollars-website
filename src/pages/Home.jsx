@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
 import "../style.css";
 import { ThemeContext } from "../App";
+import { useTranslation } from "react-i18next";
 
 function Home() {
   const { theme } = useContext(ThemeContext); // 取得當前主題
+  const { t } = useTranslation();
 
   return (
     <div className="home-container">
@@ -23,13 +25,13 @@ function Home() {
         {/* 右下角按鈕 */}
         <div className="home-buttons">
           <a href="/about" className="home-button">
-            About 7$
+            {t('about')}
           </a>
           <a href="/music-collection" className="home-button">
-            Music Collection
+            {t('music')}
           </a>
           <a href="/video-collection" className="home-button">
-            Video Collection
+            {t('video')}
           </a>
         </div>
 

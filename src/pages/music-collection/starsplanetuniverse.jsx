@@ -4,10 +4,12 @@ import Footer from '../../components/Footer'
 import Logo from '../../components/Logo'
 import { useContext } from "react";
 import { ThemeContext } from "../../App"; // 注意路徑
+import { useTranslation } from "react-i18next";
 
 
 function SPUMusic() {
   const { theme } = useContext(ThemeContext);
+  const { t } = useTranslation();
   return (
   <div className="music-detail-page" style={{ background: theme.gradient }}>
       {/* 頁面頭部 */}
@@ -26,9 +28,9 @@ function SPUMusic() {
       {/* 專輯內容 */}
       <div className="music-detail-content">
         <img src="/spu-cover.jpg" alt="SPU Cover" className="music-cover" />
-        <h1>SEVEN DOLLARS - 星宇夢</h1>
-        <p>
-          這裡是《星宇夢》的介紹區塊，你可以寫一段關於這張專輯的靈感、製作背景或歌詞概念。
+        <h1>{t('musicCollectionAlbum.spuTitle')}</h1>
+        <p className="album-description">
+          {t('musicCollectionAlbum.spuContent')}
         </p>
 
         <div className="embed-section">
