@@ -2,10 +2,12 @@ import React, { useEffect } from 'react'
 import '../../style.css'
 import Footer from '../../components/Footer'
 import Logo from '../../components/Logo'
-
+import { useContext } from "react";
+import { ThemeContext } from "../../App"; // 注意路徑
 
 
 function StillChildishVideo() {
+  const { theme } = useContext(ThemeContext);
   useEffect(() => {
     // 檢查 ig embed.js 是否已載入過，避免重複載
     if (!window.instgrm) {
@@ -21,9 +23,13 @@ function StillChildishVideo() {
 
 
   return (
-    <div className="video-detail-page">
-      <div className="header-banner">
-        <img src="/header-bg.jpg" alt="Header Background" />
+    <div className="video-detail-page" style={{ background: theme.gradient }}>
+    <div className="header-banner">
+        <img
+          src={theme.headerBg}
+          alt="Header Background"
+          className="header-image"
+        />
         <nav className="nav-bar">
           <a href="/">Home</a>
           <a href="/music-collection">Music Collection</a>

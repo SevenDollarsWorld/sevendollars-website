@@ -6,7 +6,9 @@ const { slug, title, cover, instagram, type } = args;
 // 範例：node create-video-page.js --slug=seventosmoke --title="..." --cover=xxx.jpg --instagram="..." --type=music
 
 if (!slug || !title || !cover || !instagram || !type) {
-  console.error("❌ 請輸入 --slug、--title、--cover、--instagram 和 --type=(music|dance|food|funny|other)");
+  console.error(
+    "❌ 請輸入 --slug、--title、--cover、--instagram 和 --type=(music|dance|food|funny|other)"
+  );
   process.exit(1);
 }
 
@@ -21,14 +23,17 @@ const typeMap = {
   dance: "dancevideos",
   food: "foodvideos",
   funny: "funnyvideos",
-  other: "othervideos"
+  other: "othervideos",
 };
 
 const componentName = slug.replace(/(^\w|[-_]\w)/g, (s) =>
   s.replace(/[-_]/, "").toUpperCase()
 );
 const pagePath = `./pages/video-collection/${slug}`;
-const outPath = path.join(__dirname, `../src/pages/video-collection/${slug}.jsx`);
+const outPath = path.join(
+  __dirname,
+  `../src/pages/video-collection/${slug}.jsx`
+);
 const appPath = path.join(__dirname, "../src/App.jsx");
 const vcPath = path.join(__dirname, "../src/pages/VideoCollection.jsx");
 
@@ -37,8 +42,11 @@ import React, { useEffect } from 'react'
 import '../../style.css'
 import Footer from '../../components/Footer'
 import Logo from '../../components/Logo'
+import { useContext } from "react";
+import { ThemeContext } from "../../App"; // 注意路徑
 
 function ${componentName}Video() {
+const { theme } = useContext(ThemeContext);
   useEffect(() => {
         // 檢查 ig embed.js 是否已載入過，避免重複載
         if (!window.instgrm) {
@@ -52,9 +60,13 @@ function ${componentName}Video() {
       }, [])
 
   return (
-    <div className="video-detail-page">
+    <div className="video-detail-page" style={{ background: theme.gradient }}>
     <div className="header-banner">
-        <img src="/header-bg.jpg" alt="Header Background" />
+        <img
+          src={theme.headerBg}
+          alt="Header Background"
+          className="header-image"
+        />
         
         <nav className="nav-bar">
           <a href="/">Home</a>

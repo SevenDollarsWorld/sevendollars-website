@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Logo from "../components/Logo";
 import "../style.css";
+import { useContext } from "react";
+import { ThemeContext } from "../App"; // 注意路徑
 
 function VideoCollection() {
+  const { theme } = useContext(ThemeContext);
   const musicvideos = [
     {
       title: "西門發送專輯企劃 Edit By YB",
@@ -72,17 +75,17 @@ function VideoCollection() {
     },
   ];
   const funnyvideos = [
-  {
-    title: "POV:業界機密 我們都知道我們要的是什麼客戶",
-    cover: "/secretofindustry.jpg",
-    path: "/video-collection/secretofindustry"
-  },
-{
+    {
+      title: "POV:業界機密 我們都知道我們要的是什麼客戶",
+      cover: "/secretofindustry.jpg",
+      path: "/video-collection/secretofindustry",
+    },
+    {
       title: "Vogue Viral Video",
       cover: "/vogue.jpg",
       path: "/video-collection/vogueviralvideo",
     },
-];
+  ];
   const othervideos = [
     {
       title: "Here With Me Selfmade Video",
@@ -97,10 +100,13 @@ function VideoCollection() {
   ];
 
   return (
-    <div className="basic-page">
+    <div className="basic-page" style={{ background: theme.gradient }}>
       <div className="header-banner">
-        <img src="/header-bg.jpg" alt="Header Background" />
-
+        <img
+          src={theme.headerBg}
+          alt="Header Background"
+          className="header-image"
+        />
         <nav className="nav-bar">
           <a href="/">Home</a>
           <a href="/music-collection">Music Collection</a>

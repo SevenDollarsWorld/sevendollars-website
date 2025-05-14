@@ -2,8 +2,8 @@ const fs = require("fs");
 const path = require("path");
 const args = require("minimist")(process.argv.slice(2));
 
-const { slug, title, cover, youtube, spotify } = args;
-// node create-music-page.js --slug=allmyfault --title="" --cover=.png --youtube="" --spotify=""
+const { slug, title, cover, youtube, spotify, type } = args;
+// node create-music-page.js --slug=allmyfault --title="" --type="album"or "single" --cover=.png --youtube="" --spotify=""
 
 if (!slug || !title) {
   console.error("❌ 請輸入 --slug、--title、--cover、--youtube和--spotify");
@@ -26,13 +26,16 @@ import React from 'react'
 import '../../style.css'
 import Footer from '../../components/Footer'
 import Logo from '../../components/Logo'
+import { useContext } from "react";
+import { ThemeContext } from "../../App"; // 注意路徑
 
 function ${componentName}Music() {
+const { theme } = useContext(ThemeContext);
   return (
-  <div className="music-detail-page">
+  <div className="music-detail-page" style={{ background: theme.gradient }}>
       {/* 頁面頭部 */}
       <div className="header-banner">
-        <img src="/header-bg.jpg" alt="Header Background" />
+      <img src={theme.headerBg} alt="Header Background" className="header-image" />
         <div className="logo-area">
           <img src="/logo.png" alt="Logo" className="logo" />
         </div>
@@ -98,22 +101,24 @@ if (!appContent.includes(routeEntry)) {
 fs.writeFileSync(appPath, appContent, "utf8");
 console.log(`✅ Route 已插入 App.jsx: ${routeEntry}`);
 
-// 插入 MusicCollection.jsx 的 albums 陣列
+// 插入到 MusicCollection.jsx 的 albums 或 singles 陣列
 let mcContent = fs.readFileSync(mcPath, "utf8");
-const albumEntry = `  {
+const entry = `  {
     title: "Seven Dollars - ${title}",
     cover: "/${cover}",
     path: "/music-collection/${slug}"
   },`;
+
+const listTarget = type === "album" ? "albums" : "singlesList";
+
 if (!mcContent.includes(`path: "/music-collection/${slug}"`)) {
-  mcContent = mcContent.replace(
-    /const albums = \[([\s\S]*?)\]/,
-    (match, inner) => {
-      return `const albums = [\n${albumEntry}\n${inner.trim()}\n]`;
-    }
-  );
+  const regex = new RegExp(`const ${listTarget} = \\[([\\s\\S]*?)\\]`);
+  mcContent = mcContent.replace(regex, (match, inner) => {
+    return `const ${listTarget} = [\n${entry}\n${inner.trim()}\n]`;
+  });
+
   fs.writeFileSync(mcPath, mcContent, "utf8");
-  console.log("✅ Album 項目已插入 MusicCollection.jsx");
+  console.log(`✅ ${type === "album" ? "Album" : "Single"} 項目已插入 MusicCollection.jsx`);
 } else {
-  console.log("⚠️ Album 項目已存在，未重複插入");
+  console.log(`⚠️ 此項目已存在於 ${listTarget}，未重複插入`);
 }

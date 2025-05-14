@@ -2,14 +2,17 @@ import React from 'react'
 import '../../style.css'
 import Footer from '../../components/Footer'
 import Logo from '../../components/Logo'
+import { useContext } from "react";
+import { ThemeContext } from "../../App"; // 注意路徑
 
 
 function StillChildishMusic() {
+  const { theme } = useContext(ThemeContext);
   return (
-    <div className="music-detail-page">
+  <div className="music-detail-page" style={{ background: theme.gradient }}>
       {/* 頁面頭部 */}
       <div className="header-banner">
-        <img src="/header-bg.jpg" alt="Header Background" />
+      <img src={theme.headerBg} alt="Header Background" className="header-image" />
         
         <nav className="nav-bar">
           <a href="/">Home</a>
@@ -41,7 +44,7 @@ function StillChildishMusic() {
         <div className="embed-section">
           <iframe style={{ borderRadius: '12px' }}
             src="https://open.spotify.com/embed/album/7InqKpgPbw98wwnixJp4Tj?utm_source=generator"
-            width="100%" height="352" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            width="100%" height="700" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             loading="lazy"
           ></iframe>
         </div>

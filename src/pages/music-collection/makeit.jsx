@@ -3,13 +3,16 @@ import React from 'react'
 import '../../style.css'
 import Footer from '../../components/Footer'
 import Logo from '../../components/Logo'
+import { useContext } from "react";
+import { ThemeContext } from "../../App"; // 注意路徑
 
 function MakeitMusic() {
+  const { theme } = useContext(ThemeContext);
   return (
-  <div className="music-detail-page">
+  <div className="music-detail-page" style={{ background: theme.gradient }}>
       {/* 頁面頭部 */}
       <div className="header-banner">
-        <img src="/header-bg.jpg" alt="Header Background" />
+      <img src={theme.headerBg} alt="Header Background" className="header-image" />
         
         <nav className="nav-bar">
           <a href="/">Home</a>

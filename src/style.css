@@ -1,3 +1,5 @@
+
+
 body {
   margin: 0;
   font-family: Helvetica, Arial, "LiHei Pro", "黑體-繁", "微軟正黑體",
@@ -21,6 +23,75 @@ body {
   object-fit: cover;
   z-index: -1;
 }
+
+.theme-selector {
+  position: fixed;
+  top: 200px; /* 你要多高就調整這裡 */
+  left: 30px; /* 靠左邊 */
+  display: flex;
+  flex-direction: column; /* 讓按鈕垂直排列 */
+  gap: 10px;
+  z-index: 1000;
+}
+
+
+.theme-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid white;
+  cursor: pointer;
+  
+  transition: transform 0.2s ease;
+}
+
+.theme-button:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 5px white;
+}
+
+.language-dropdown {
+  position: fixed;
+  top: 330px;
+  left: 31px; /* 靠左邊 */
+  z-index: 1000;
+}
+
+.language-icon {
+  width: 30px;
+  height: 30px;
+  
+  cursor: pointer;
+}
+
+.language-menu {
+  display: none;
+  position: absolute;
+  top: 20px;
+  left: 25px; /* 靠左邊 */
+  background-color: black;
+  border: 1px solid #333;
+  border-radius: 5px;
+  min-width: 120px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.language-dropdown:hover .language-menu {
+  display: block;
+}
+
+.language-item {
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: center;
+}
+
+.language-item:hover {
+  background-color: #444;
+}
+
 
 footer.home-footer {
   position: absolute;

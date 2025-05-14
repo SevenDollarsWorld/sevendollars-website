@@ -2,13 +2,20 @@ import React from "react";
 import "../style.css";
 import Footer from "../components/Footer";
 import Logo from "../components/Logo";
+import { useContext } from "react";
+import { ThemeContext } from "../App"; // 注意路徑
 
 function Contact() {
+  const { theme } = useContext(ThemeContext);
   return (
-    <div className="basic-page">
-      <div className="header-banner">
-        <img src="/header-bg.jpg" alt="Header Background" />
-
+    <div className="basic-page" style={{ background: theme.gradient }}>
+      <div
+        className="header-banner"
+        style={{
+          background: theme.gradient,
+          backgroundImage: `url(${theme.headerBg})`,
+        }}
+      >
         <nav className="nav-bar">
           <a href="/">Home</a>
           <a href="/music-collection">Music Collection</a>

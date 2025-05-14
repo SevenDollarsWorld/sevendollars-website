@@ -3,13 +3,16 @@ import React from 'react'
 import '../../style.css'
 import Footer from '../../components/Footer'
 import Logo from '../../components/Logo'
+import { useContext } from "react";
+import { ThemeContext } from "../../App"; // 注意路徑
 
 function RaporatoryMusic() {
+  const { theme } = useContext(ThemeContext);
   return (
-  <div className="music-detail-page">
+  <div className="music-detail-page" style={{ background: theme.gradient }}>
       {/* 頁面頭部 */}
       <div className="header-banner">
-        <img src="/header-bg.jpg" alt="Header Background" />
+      <img src={theme.headerBg} alt="Header Background" className="header-image" />
         <div className="logo-area">
           <img src="/logo.png" alt="Logo" className="logo" />
         </div>
@@ -28,7 +31,7 @@ function RaporatoryMusic() {
         <h1>Raporatory Album</h1>
         <p>這裡是介紹內容...</p>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=0NEKSA5jPnrbhP1Y&amp;list=PLjOsCn_vlGCvCwNUef-Xt-ppMi4U6oDOj" frameBorder="0" allowFullScreen></iframe>
-        <iframe style={{ borderRadius: '12px' }} src="https://open.spotify.com/embed/album/4595oLhpSOGB9pzoo8E2oG?utm_source=generator" width="100%" height="352" frameBorder="0" loading="lazy"></iframe>
+        <iframe style={{ borderRadius: '12px' }} src="https://open.spotify.com/embed/album/4595oLhpSOGB9pzoo8E2oG?utm_source=generator" width="100%" height="700" frameBorder="0" loading="lazy"></iframe>
       </div>
       <div className="music-page"></div>
       <Logo />
