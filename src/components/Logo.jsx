@@ -1,19 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../style.css'; // 如果你用 CSS 檔案
 import { useContext } from "react";
-import { ThemeContext } from "../App"; // 注意路徑
+import { ThemeContext } from "../App";
 
-function Logo () {
+function Logo() {
   const { theme } = useContext(ThemeContext);
+
   return (
-    <Link to="/" className="logo-area">
-      <img
-        src={theme.themeLogo}
-        alt="logo"
-        className="logo"
-      />
-    </Link>
+    <div className="absolute top-4 left-4 z-50">
+      <Link to="/">
+        <img
+          src={theme.themeLogo}
+          alt="logo"
+          className="w-24 h-auto hover:drop-shadow-[0_0_8px_white] transition-all"
+        />
+      </Link>
+    </div>
   );
 }
 

@@ -1,4 +1,4 @@
-
+@import "tailwindcss";
 
 body {
   margin: 0;
@@ -18,6 +18,13 @@ body {
   height: 100vh;
   overflow: hidden;
 }
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
 
 .home-video {
   position: fixed;
@@ -195,19 +202,6 @@ footer.home-footer img:hover {
   color: black;
 }
 
-.logo-area {
-  position: absolute;
-  top: 20px;
-  left: 40px;
-}
-
-.logo {
-  position: absolute;
-  left: 20px;
-  z-index: 1000;
-  width: 100px; /* 控制顯示大小 */
-  height: auto; /* 等比例縮放 */
-}
 
 .logo:hover {
   filter: drop-shadow(0 0 8px white);

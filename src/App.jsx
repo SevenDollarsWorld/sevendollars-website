@@ -1,4 +1,5 @@
-import React, { useState, createContext } from "react";
+import React, { useState, createContext, useEffect } from "react";
+
 
 import {
   useLocation,
@@ -31,22 +32,32 @@ function App() {
   const theme = themes[themeName];
 
   const savedLang = localStorage.getItem("language");
-  if (savedLang) i18n.changeLanguage(savedLang);
+  useEffect(() => {
+  const savedLang = localStorage.getItem("language");
+  if (savedLang) {
+    i18n.changeLanguage(savedLang);
+  }
+}, []);
+
 
   const location = useLocation();
   const isHome = location.pathname === "/";
 
   return (
+    
     <ThemeContext.Provider value={{ theme, setThemeName }}>
+
       <div
         style={{
           background: isHome ? "none" : theme.gradient,
           minHeight: "100vh",
         }}
       >
+        
         <ThemeSelector onThemeChange={setThemeName} />
 
         <LanguageSelector />
+        
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

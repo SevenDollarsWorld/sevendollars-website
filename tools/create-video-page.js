@@ -44,9 +44,11 @@ import Footer from '../../components/Footer'
 import Logo from '../../components/Logo'
 import { useContext } from "react";
 import { ThemeContext } from "../../App"; // 注意路徑
+import { useTranslation } from "react-i18next";
 
 function ${componentName}Video() {
 const { theme } = useContext(ThemeContext);
+const { t } = useTranslation();
   useEffect(() => {
         // 檢查 ig embed.js 是否已載入過，避免重複載
         if (!window.instgrm) {

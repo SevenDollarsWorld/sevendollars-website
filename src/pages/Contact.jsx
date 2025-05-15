@@ -11,13 +11,12 @@ function Contact() {
   const { t } = useTranslation();
   return (
     <div className="basic-page" style={{ background: theme.gradient }}>
-      <div
-        className="header-banner"
-        style={{
-          background: theme.gradient,
-          backgroundImage: `url(${theme.headerBg})`,
-        }}
-      >
+      <div className="header-banner">
+        <img
+          src={theme.headerBg}
+          alt="Header Background"
+          className="header-image"
+        />
         <nav className="nav-bar">
           <a href="/">{t('home')}</a>
           <a href="/music-collection">{t('music')}</a>
