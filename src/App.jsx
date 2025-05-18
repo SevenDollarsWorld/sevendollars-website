@@ -21,6 +21,8 @@ import StillChildishMusic from "./pages/music-collection/stillchildish";
 import SPUMusic from "./pages/music-collection/starsplanetuniverse";
 import StillChildishVideo from "./pages/video-collection/stillchildish";
 import OceanMusic from "./pages/music-collection/ocean";
+import SiteLayout from "./layout/SiteLayout";
+
 
 export const ThemeContext = createContext();
 
@@ -59,6 +61,7 @@ function App() {
         <LanguageSelector />
         
         <Routes>
+          
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
@@ -184,6 +187,7 @@ function App() {
             path="/video-collection/secretofindustry"
             element={<SecretofindustryVideo />}
           />
+          
         </Routes>
       </div>
     </ThemeContext.Provider>

@@ -19,12 +19,37 @@ function StillChildishMusic() {
           className="header-image"
         />
 
-        <nav className="nav-bar">
-          <a href="/">{t("home")}</a>
-          <a href="/music-collection">{t("music")}</a>
-          <a href="/video-collection">{t("video")}</a>
-          <a href="/about">{t("about")}</a>
-          <a href="/contact">{t("contact")}</a>
+        <nav className="absolute top-8 left-1/2 -translate-x-1/2 z-10 flex flex-wrap justify-center gap-3 text-xs sm:text-sm md:text-base bg-black/40 backdrop-blur-sm px-6 py-2 rounded-xl text-white">
+          <a
+            href="/"
+            className="transition-all px-3 py-1 rounded hover:bg-white hover:text-black hover:font-bold"
+          >
+            {t("home")}
+          </a>
+          <a
+            href="/music-collection"
+            className="transition-all px-3 py-1 rounded hover:bg-white hover:text-black hover:font-bold"
+          >
+            {t("music")}
+          </a>
+          <a
+            href="/video-collection"
+            className="transition-all px-3 py-1 rounded hover:bg-white hover:text-black hover:font-bold"
+          >
+            {t("video")}
+          </a>
+          <a
+            href="/about"
+            className="transition-all px-3 py-1 rounded hover:bg-white hover:text-black hover:font-bold"
+          >
+            {t("about")}
+          </a>
+          <a
+            href="/contact"
+            className="transition-all px-3 py-1 rounded hover:bg-white hover:text-black hover:font-bold"
+          >
+            {t("contact")}
+          </a>
         </nav>
       </div>
 

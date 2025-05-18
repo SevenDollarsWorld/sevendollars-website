@@ -1,30 +1,27 @@
 import React from "react";
-import "../style.css";
+import { Outlet } from "react-router-dom";
 import Footer from "../components/Footer";
 import Logo from "../components/Logo";
 import { useContext } from "react";
-import { ThemeContext } from "../App"; // 注意路徑
+import { ThemeContext } from "../App";
+import ThemeSelector from "../components/ThemeSelector";
+import LanguageSelector from "../components/LanguageSelector";
 import { useTranslation } from "react-i18next";
-import AboutContent from "../components/AboutContent";
 
-
-
-function About() {
-  const { theme } = useContext(ThemeContext);
+export default function SiteLayout() {
+  const { theme, setThemeName } = useContext(ThemeContext);
   const { t } = useTranslation();
-  return (
-    
-    <div className="basic-page">
-      
-      <div className="header-banner">
-        
-        <img
-          src={theme.headerBg}
-          alt="Header Background"
-          className="header-image"
-        />
 
-        <nav className="absolute top-8 left-1/2 -translate-x-1/2 z-10 flex flex-wrap justify-center gap-3 text-xs sm:text-sm md:text-base bg-black/40 backdrop-blur-sm px-6 py-2 rounded-xl text-white">
+  return (
+    <div
+      className="min-h-screen flex flex-col"
+      style={{ background: theme.gradient }}
+    >
+      {/* Logo + Nav Header */}
+      <header className="relative w-full bg-transparent">
+        <div className="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between p-4 sm:p-6">
+          <Logo />
+          <nav className="absolute top-8 left-1/2 -translate-x-1/2 z-10 flex flex-wrap justify-center gap-3 text-xs sm:text-sm md:text-base bg-black/40 backdrop-blur-sm px-6 py-2 rounded-xl text-white">
           <a
             href="/"
             className="transition-all px-3 py-1 rounded hover:bg-white hover:text-black hover:font-bold"
@@ -56,14 +53,22 @@ function About() {
             {t("contact")}
           </a>
         </nav>
-      </div>
+        </div>
+        <div className="absolute top-4 right-4 flex gap-2">
+          <ThemeSelector onThemeChange={setThemeName} />
+          <LanguageSelector />
+        </div>
+      </header>
 
-      <AboutContent />
-      <Logo />
-      
+      {/* Page Content */}
+      <main className="flex-grow">
+        
+          <Outlet />
+        
+      </main>
+
+      {/* Footer */}
       <Footer />
     </div>
   );
 }
-
-export default About;

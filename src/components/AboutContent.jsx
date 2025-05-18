@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import React, { useContext, useEffect, useState } from "react";
 
@@ -48,26 +47,26 @@ export default function AboutContent() {
   }, [themeCtx]);
 
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full max-w-screen-xl mx-auto px-4 sm:px-6 md:px-8 py-8">
       {sections.map((section, index) => (
         <div
           key={index}
-          className="relative w-full min-h-screen bg-cover bg-center flex items-center justify-center px-4 py-20"
-          style={{ backgroundImage: `url(${section.bg})` }}
+          className="relative w-full min-h-screen bg-cover bg-center px-0 py-32"
+          style={{
+            backgroundImage: `linear-gradient(to bottom, transparent 49%, rgba(0,0,0,0.8) 51%), url(${section.bg})`,
+            backgroundBlendMode: 'overlay'
+          }}
         >
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="backdrop-blur-sm bg-white/50 dark:bg-black/40 rounded-xl p-6 sm:p-8 max-w-3xl w-full shadow-xl text-zinc-900 dark:text-zinc-100 hover:shadow-2xl transition-all"
-            style={{
-              background: gradient,
-              backgroundBlendMode: 'overlay'
-            }}
+            className="relative -mt-20 z-10 mx-auto w-[90%] sm:w-[80%] md:w-[60%] rounded-xl backdrop-blur-sm bg-white/50 dark:bg-black/40 p-6 sm:p-8 shadow-xl text-zinc-900 dark:text-zinc-100 hover:shadow-2xl transition-all"
+            style={{ background: gradient }}
           >
             {index === 0 ? (
-              <div className="flex flex-col md:flex-row items-center gap-6">
+              <div className="flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
                 <img
                   src={section.profile}
                   alt="Profile"
@@ -79,7 +78,7 @@ export default function AboutContent() {
                 </div>
               </div>
             ) : (
-              <p className="text-base sm:text-lg leading-relaxed whitespace-pre-line">{section.text}</p>
+              <p className="text-base sm:text-lg leading-relaxed whitespace-pre-line text-center md:text-left">{section.text}</p>
             )}
           </motion.div>
         </div>

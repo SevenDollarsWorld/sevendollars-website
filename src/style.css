@@ -19,6 +19,13 @@ body {
   overflow: hidden;
 }
 
+.home {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
 html,
 body,
 #root {
@@ -27,7 +34,7 @@ body,
 
 
 .home-video {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
@@ -35,6 +42,7 @@ body,
   object-fit: cover;
   z-index: -1;
 }
+
 
 .theme-selector {
   position: fixed;
@@ -114,12 +122,13 @@ footer.home-footer {
   justify-content: flex-start;
   gap: 30px;
   padding: 10px 100px;
+  box-sizing: border-box;
 }
 
 footer.home-footer img {
   left: 0%;
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   transition: all 0.3s ease;
 }
 
@@ -130,31 +139,33 @@ footer.home-footer img:hover {
 
 .home-buttons {
   position: absolute;
-  top: 80%;
+  bottom: 15vh;
   left: 70%;
-  transform: translate(-40%, -50%);
+  transform: translateX(-50%);
   display: flex;
-  flex-direction: row;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  z-index: 10;
 }
 
 .home-button {
-  white-space: nowrap; /* ⬅️ 不讓字換行 */
-  flex-shrink: 1; /* ⬅️ 遇空間壓力可以縮小一點 */
-  background-color: transparent;
-  color: white;
-  padding: 10px 24px;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+  font-weight: 600;
+  border-radius: 999px;
   text-decoration: none;
-  font-weight: bold;
-  border: 1px solid white;
-  transition: all 0.5s ease;
-  border-radius: 0; /* 取消圓角 */
+  flex-grow: 1; /* 讓按鈕區撐開中間空間 */
+  transition: all 0.3s ease;
 }
 
 .home-button:hover {
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: white;
 }
+
 
 .music-page {
   min-height: 100vh;

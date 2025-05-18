@@ -2,9 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Logo from "../components/Logo";
-import "../style.css";
 import { useContext } from "react";
-import { ThemeContext } from "../App"; // 注意路徑
+import { ThemeContext } from "../App";
 import { useTranslation } from "react-i18next";
 
 function MusicCollection() {
@@ -31,7 +30,6 @@ function MusicCollection() {
       cover: "/raporatory.jpg",
       path: "/music-collection/raporatory",
     },
-    // 之後可在這邊新增更多作品
   ];
 
   const singlesList = [
@@ -114,67 +112,104 @@ function MusicCollection() {
   ];
 
   return (
-    <div className="basic-page" style={{ background: theme.gradient }}>
-      <div className="header-banner">
+    <>
+      <div className="relative w-full">
         <img
           src={theme.headerBg}
           alt="Header Background"
-          className="header-image"
+          className="w-full h-[40vh] object-cover"
         />
 
-        <nav className="nav-bar">
-          <a href="/">{t('home')}</a>
-          <a href="/music-collection">{t('music')}</a>
-          <a href="/video-collection">{t('video')}</a>
-          <a href="/about">{t('about')}</a>
-          <a href="/contact">{t('contact')}</a>
+        <nav className="absolute top-8 left-1/2 -translate-x-1/2 z-10 flex flex-wrap justify-center gap-3 text-xs sm:text-sm md:text-base bg-black/40 backdrop-blur-sm px-6 py-2 rounded-xl text-white">
+          <a
+            href="/"
+            className="transition-all px-3 py-1 rounded hover:bg-white hover:text-black hover:font-bold"
+          >
+            {t("home")}
+          </a>
+          <a
+            href="/music-collection"
+            className="transition-all px-3 py-1 rounded hover:bg-white hover:text-black hover:font-bold"
+          >
+            {t("music")}
+          </a>
+          <a
+            href="/video-collection"
+            className="transition-all px-3 py-1 rounded hover:bg-white hover:text-black hover:font-bold"
+          >
+            {t("video")}
+          </a>
+          <a
+            href="/about"
+            className="transition-all px-3 py-1 rounded hover:bg-white hover:text-black hover:font-bold"
+          >
+            {t("about")}
+          </a>
+          <a
+            href="/contact"
+            className="transition-all px-3 py-1 rounded hover:bg-white hover:text-black hover:font-bold"
+          >
+            {t("contact")}
+          </a>
         </nav>
       </div>
-      <section className="album-section">
-        <div className="album-wrapper">
-          <div className="album-container">
-            <h2 className="section-title">{t('musicCollection.albums')}</h2>
-            <div className="album-grid">
-              {albums.map((album, index) => (
-                <Link to={album.path} className="album-box" key={index}>
-                  <div
-                    className="album-thumb"
-                    style={{ backgroundImage: `url(${album.cover})` }}
-                  >
-                    <div className="album-title">{album.title}</div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
+
+      <div
+        style={{ background: theme.gradient }}
+        className="min-h-screen px-4 sm:px-6 md:px-12 py-10 text-zinc-100"
+      >
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-10">
+          {t("musicCollection.albums")}
+        </h2>
+        
+        <div className="flex flex-wrap justify-center gap-6 mb-15">
+          {albums.map((album, index) => (
+            <Link
+              key={index}
+              to={album.path}
+              className="w-[45%] sm:w-[30%] md:w-[22%] lg:w-[23%]"
+            >
+              <div className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all">
+                <img
+                  src={album.cover}
+                  alt={album.title}
+                  className="w-full h-auto object-cover"
+                />
+                <div className="p-2 text-xs sm:text-sm md:text-base text-center">
+                  {album.title}
+                </div>
+              </div>
+            </Link>
+          ))}
         </div>
-      </section>
-
-      <section className="album-section">
-        <div className="album-wrapper">
-          <div className="album-container">
-            <h2 className="section-title">{t('musicCollection.singles')}</h2>
-            <div className="album-grid">
-              {singlesList.map((single, index) => (
-                <Link to={single.path} className="album-box" key={index}>
-                  <div
-                    className="album-thumb"
-                    style={{ backgroundImage: `url(${single.cover})` }}
-                  >
-                    <div className="album-title">{single.title}</div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-10">
+          {t("musicCollection.singles")}
+        </h2>
+        <div className="flex flex-wrap justify-center gap-6">
+          {singlesList.map((single, index) => (
+            <Link
+              key={index}
+              to={single.path}
+              className="w-[45%] sm:w-[30%] md:w-[22%] lg:w-[23%]"
+            >
+              <div className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all">
+                <img
+                  src={single.cover}
+                  alt={single.title}
+                  className="w-full h-auto object-cover"
+                />
+                <div className="p-2 text-xs sm:text-sm md:text-base text-center">
+                  {single.title}
+                </div>
+              </div>
+            </Link>
+          ))}
         </div>
-      </section>
-
-      <div className="music-page"></div>
-
-      <Logo />
+        <Logo />
       <Footer />
-    </div>
+        
+      </div>
+    </>
   );
 }
 
