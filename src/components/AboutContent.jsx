@@ -54,7 +54,8 @@ export default function AboutContent() {
           key={index}
           className="relative w-full h-screen transition-all duration-1000"
           style={{
-            backgroundImage: `url(${section.bg})`,
+            backgroundImage: `${gradient}, url(${section.bg})`,
+            backgroundBlendMode: "overlay",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
