@@ -11,19 +11,19 @@ const sections = [
   },
   {
     bg: "/about/school.JPG",
-    text: "這是七元的旅程片段：舞台、教室、挫敗、重生與交流。每一個場景，都是他選擇持續創作與發聲的理由。",
+    textkey: "aboutContent.partTwo"
   },
   {
     bg: "/about/bounceback3.jpeg",
-    text: "每次表演後的低潮，讓他更懂得珍惜舞台的重量與責任。",
+    textkey: "aboutContent.partThree"
   },
   {
     bg: "/about/bounceback.jpeg",
-    text: "他曾迷失、曾懷疑，但聲音與筆仍是他的出口。",
+    textkey: "aboutContent.partFour"
   },
   {
     bg: "/about/bounceback2.jpeg",
-    text: "他不是站在高處歌唱的人，而是與觀眾一起在低處活著的人。",
+    textkey: "aboutContent.partFive"
   },
   {
     bg: "/about/smallconcert.jpg",
@@ -54,14 +54,14 @@ export default function AboutContent() {
           key={index}
           className="relative w-full h-screen transition-all duration-1000"
           style={{
-            backgroundImage: `${gradient}, url(${section.bg})`,
-            backgroundBlendMode: "overlay",
+            backgroundImage: `url(${section.bg})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
           }}
+          
         >
-          <div className="absolute inset-0 flex items-end justify-center pb-24">
+          <div className="absolute inset-0 flex items-center justify-center px-4 pt-20 pb-10">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
