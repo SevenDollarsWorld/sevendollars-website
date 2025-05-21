@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { ThemeContext } from "../../App";
 import { useTranslation } from "react-i18next"; // 注意路徑
 
-function twoamMusic() {
+function TwoamMusic() {
   const { theme } = useContext(ThemeContext);
   const { t } = useTranslation();
   return (
@@ -81,4 +81,4 @@ function twoamMusic() {
   );
 }
 
-export default twoamMusic;
+export default TwoamMusic;
