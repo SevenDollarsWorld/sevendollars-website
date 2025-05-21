@@ -46,29 +46,24 @@ body,
 
 .theme-selector {
   position: fixed;
-  top: 200px; /* 你要多高就調整這裡 */
-  left: 30px; /* 靠左邊 */
+  top: 1rem;
+  right: 1rem;
   display: flex;
-  flex-direction: column; /* 讓按鈕垂直排列 */
-  gap: 10px;
-  z-index: 1000;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  z-index: 50;
 }
-
-
 .theme-button {
   width: 32px;
   height: 32px;
-  border-radius: 50%;
+  border-radius: 9999px;
   border: 2px solid white;
-  cursor: pointer;
-  
   transition: transform 0.2s ease;
 }
-
 .theme-button:hover {
-  transform: scale(1.2);
-  box-shadow: 0 0 5px white;
+  transform: scale(1.1);
 }
+
 
 .language-dropdown {
   position: fixed;

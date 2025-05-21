@@ -1,6 +1,5 @@
 import React, { useState, createContext, useEffect } from "react";
 
-
 import {
   useLocation,
   BrowserRouter as Router,
@@ -10,6 +9,7 @@ import {
 import { themes } from "./themes";
 import ThemeSelector from "./components/ThemeSelector";
 import LanguageSelector from "./components/LanguageSelector";
+import ThemeSelectorWithLanguage from "./components/ThemeSelectorWithLanguage";
 import i18n from "./i18n";
 
 import Home from "./pages/Home";
@@ -23,7 +23,6 @@ import StillChildishVideo from "./pages/video-collection/stillchildish";
 import OceanMusic from "./pages/music-collection/ocean";
 import SiteLayout from "./layout/SiteLayout";
 
-
 export const ThemeContext = createContext();
 
 function App() {
@@ -35,33 +34,26 @@ function App() {
 
   const savedLang = localStorage.getItem("language");
   useEffect(() => {
-  const savedLang = localStorage.getItem("language");
-  if (savedLang) {
-    i18n.changeLanguage(savedLang);
-  }
-}, []);
-
+    const savedLang = localStorage.getItem("language");
+    if (savedLang) {
+      i18n.changeLanguage(savedLang);
+    }
+  }, []);
 
   const location = useLocation();
   const isHome = location.pathname === "/";
 
   return (
-    
-    <ThemeContext.Provider value={{ theme, setThemeName }}>
-
+    <ThemeContext.Provider value={{ theme, setThemeName, themeName }}>
       <div
         style={{
           background: isHome ? "none" : theme.gradient,
           minHeight: "100vh",
         }}
       >
-        
-        <ThemeSelector onThemeChange={setThemeName} />
+        <ThemeSelectorWithLanguage onThemeChange={setThemeName} />
 
-        <LanguageSelector />
-        
         <Routes>
-          
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
@@ -142,7 +134,7 @@ function App() {
             element={<NeverregretMusic />}
           />
 
-          <Route path="/music-collection/2am" element={<twoamMusic />} />
+          <Route path="/music-collection/2am" element={<TwoamMusic />} />
 
           <Route
             path="/music-collection/wegonbealright"
@@ -187,7 +179,6 @@ function App() {
             path="/video-collection/secretofindustry"
             element={<SecretofindustryVideo />}
           />
-          
         </Routes>
       </div>
     </ThemeContext.Provider>
@@ -211,7 +202,7 @@ import DormMusic from "./pages/music-collection/dorm";
 import RaporatoryMusic from "./pages/music-collection/raporatory";
 import SpuintroMusic from "./pages/music-collection/spuintro";
 import NeverregretMusic from "./pages/music-collection/neverregret";
-import twoamMusic from "./pages/music-collection/2am";
+import TwoamMusic from "./pages/music-collection/2am";
 import WegonbealrightMusic from "./pages/music-collection/wegonbealright";
 import MeteorMusic from "./pages/music-collection/meteor";
 import XimenVideo from "./pages/video-collection/ximen";

@@ -54,11 +54,11 @@ function StillChildishMusic() {
       </div>
 
       {/* 專輯內容 */}
-      <div className="music-detail-content">
+      <div className="music-detail-content text-center px-4">
         <img
           src="/stillchildish-cover.jpg"
           alt="Still Childish Cover"
-          className="music-cover"
+          className="music-cover mx-auto"
         />
         <h1>SEVEN DOLLARS - Still Childish</h1>
         <p className="album-description">
