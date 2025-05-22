@@ -72,7 +72,7 @@ function VideoCollection() {
       path: "/video-collection/freestylewithbrostwo",
     },
     {
-      title: "Kendrick Lamar - Euphoria Freestyle Dance",
+      title: "Kendrick Lamar - Luther Freestyle Dance",
       cover: "/dancewithkdot.jpg",
       path: "/video-collection/euphoriadance"
     },
