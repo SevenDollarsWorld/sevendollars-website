@@ -53,7 +53,7 @@ function Contact() {
 
       <div className="basic-content">
         <h1>Contact</h1>
-        <p>你可以在這裡放 Instagram、Email、合作方式等資訊。</p>
+        <p></p>
       </div>
       <Logo />
       <Footer />

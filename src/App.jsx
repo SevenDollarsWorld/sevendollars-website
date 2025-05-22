@@ -179,7 +179,29 @@ function App() {
             path="/video-collection/secretofindustry"
             element={<SecretofindustryVideo />}
           />
-        </Routes>
+        
+  <Route path="/video-collection/bees" element={<BeesVideo />} />
+
+  <Route path="/video-collection/broswedding" element={<BrosweddingVideo />} />
+
+  <Route path="/video-collection/tomodachi" element={<TomodachiVideo />} />
+
+  <Route path="/video-collection/wakeupstyleone" element={<WakeupstyleoneVideo />} />
+
+  <Route path="/video-collection/wakeupstyletwo" element={<WakeupstyletwoVideo />} />
+
+  <Route path="/video-collection/ogstroll" element={<OgstrollVideo />} />
+
+  <Route path="/video-collection/stsdctwo" element={<StsdctwoVideo />} />
+
+  <Route path="/video-collection/tdatnreels" element={<TdatnreelsVideo />} />
+
+  <Route path="/video-collection/bhremix" element={<BhremixVideo />} />
+
+  <Route path="/video-collection/euphoriadance" element={<EuphoriadanceVideo />} />
+
+  <Route path="/video-collection/spuseriespartone" element={<SpuseriespartoneVideo />} />
+</Routes>
       </div>
     </ThemeContext.Provider>
   );
@@ -216,3 +238,14 @@ import FreestylewithbrostwoVideo from "./pages/video-collection/freestylewithbro
 import FreestylewithbrosoneVideo from "./pages/video-collection/freestylewithbrosone";
 import HerewithmeVideo from "./pages/video-collection/herewithme";
 import SecretofindustryVideo from "./pages/video-collection/secretofindustry";
+import BeesVideo from './pages/video-collection/bees';
+import BrosweddingVideo from './pages/video-collection/broswedding';
+import TomodachiVideo from './pages/video-collection/tomodachi';
+import WakeupstyleoneVideo from './pages/video-collection/wakeupstyleone';
+import WakeupstyletwoVideo from './pages/video-collection/wakeupstyletwo';
+import OgstrollVideo from './pages/video-collection/ogstroll';
+import StsdctwoVideo from './pages/video-collection/stsdctwo';
+import TdatnreelsVideo from './pages/video-collection/tdatnreels';
+import BhremixVideo from './pages/video-collection/bhremix';
+import EuphoriadanceVideo from './pages/video-collection/euphoriadance';
+import SpuseriespartoneVideo from './pages/video-collection/spuseriespartone';

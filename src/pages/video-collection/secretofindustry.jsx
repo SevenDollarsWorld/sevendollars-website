@@ -22,7 +22,7 @@ function SecretofindustryVideo() {
   }, []);
 
   return (
-    <div className="video-detail-page" style={{ background: theme.gradient }}>
+    <div className="video-detail-page" style={{ background: theme.background }}>
       <div className="relative w-full">
         <img
           src={theme.headerBg}
@@ -64,17 +64,18 @@ function SecretofindustryVideo() {
         </nav>
       </div>
 
-      <div className="video-detail-content">
-        <h1>POV:業界機密 我們都知道我們要的是什麼客戶</h1>
-        <p>這是 的 IG Reel 影像頁面。</p>
-
+      <div className="video-detail-content flex flex-col items-center px-4">
+        
         <blockquote
           className="instagram-media"
           data-instgrm-permalink="https://www.instagram.com/reel/DCg55gix-su/?utm_source=ig_embed&amp;utm_campaign=loading"
           data-instgrm-version="14"
-          style={{ margin: "0 auto", maxWidth: "540px" }}
+          style={{ maxWidth: "540px" }}
         ></blockquote>
+        
         <script async src="//www.instagram.com/embed.js"></script>
+        <h1 className="text-xl sm:text-2xl font-bold mt-6 text-center">POV:業界機密 我們都知道我們要的是什麼客戶</h1>
+        <p className="text-center mt-2">這是 的 IG Reel 影像頁面。</p>
       </div>
       <Logo />
       <Footer />

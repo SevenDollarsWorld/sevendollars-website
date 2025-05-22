@@ -11,27 +11,55 @@ function VideoCollection() {
   const { theme } = useContext(ThemeContext);
   const { t } = useTranslation();
   const musicvideos = [
+
     {
       title: "西門發送專輯企劃 Edit By YB",
       cover: "/ximen.jpg",
       path: "/video-collection/ximen",
     },
     {
-      title: "Seven To Smoke Dance Challenge",
-      cover: "/seventosmoke.jpg",
-      path: "/video-collection/seventosmoke",
-    },
-    {
       title: "SEVEN DOLLARS - Still Childish",
       cover: "/stillchildish-cover.jpg",
       path: "/video-collection/stillchildish",
     },
-  ];
-  const dancevideos = [
     {
       title: "Seven To Smoke Dance Challenge",
       cover: "/seventosmoke.jpg",
       path: "/video-collection/seventosmoke",
+    },
+    {
+      title: "Seven To Smoke Feat.YCDC",
+      cover: "/stsdc2.jpg",
+      path: "/video-collection/stsdctwo"
+    },
+    {
+      title: "SPU Series EP.1",
+      cover: "/staywithyoureel.jpg",
+      path: "/video-collection/spuseriespartone"
+    },
+    {
+      title: "夢魘後的魔鬼 前導片 Shot by YB",
+      cover: "/tdatnreels.jpg",
+      path: "/video-collection/tdatnreels"
+    },
+    {
+      title: "慣老闆Remix Challenge",
+      cover: "/badhabitremix.jpg",
+      path: "/video-collection/bhremix"
+    },
+
+  ];
+  const dancevideos = [
+
+    {
+      title: "Seven To Smoke Dance Challenge",
+      cover: "/seventosmoke.jpg",
+      path: "/video-collection/seventosmoke",
+    },
+    {
+      title: "Seven To Smoke Feat.YCDC",
+      cover: "/stsdc2.jpg",
+      path: "/video-collection/stsdctwo"
     },
     {
       title: "三基團聚跳Freestyle Dance",
@@ -42,6 +70,11 @@ function VideoCollection() {
       title: "三基團聚跳Freestyle Dance",
       cover: "/dancewithbros.jpg",
       path: "/video-collection/freestylewithbrostwo",
+    },
+    {
+      title: "Kendrick Lamar - Euphoria Freestyle Dance",
+      cover: "/dancewithkdot.jpg",
+      path: "/video-collection/euphoriadance"
     },
     {
       title: "Mac Miller 5 Dollar Pony Ride Freestyle Dance",
@@ -77,15 +110,47 @@ function VideoCollection() {
     },
   ];
   const funnyvideos = [
+
     {
       title: "POV:業界機密 我們都知道我們要的是什麼客戶",
       cover: "/secretofindustry.jpg",
       path: "/video-collection/secretofindustry",
     },
     {
+      title: "當我第一次聽到頑童-OGS",
+      cover: "/ogstroll.jpg",
+      path: "/video-collection/ogstroll"
+    },
+    {
+      title: "POV:各種舞者的起床方式Part2",
+      cover: "/everystyleofwakingupp2.jpg",
+      path: "/video-collection/wakeupstyletwo"
+    },
+    {
+      title: "POV:各種舞者的起床方式Part1",
+      cover: "/everystyleofwakingupp1.jpg",
+      path: "/video-collection/wakeupstyleone"
+    },
+    {
       title: "Vogue Viral Video",
       cover: "/vogue.jpg",
       path: "/video-collection/vogueviralvideo",
+    },
+
+    {
+      title: "Team Tomodachi Remix",
+      cover: "/tomodachitroll.jpg",
+      path: "/video-collection/tomodachi"
+    },
+    {
+      title: "怎麼追女生",
+      cover: "/bees.jpg",
+      path: "/video-collection/bees"
+    },
+    {
+      title: "POV:當你表哥的婚禮快遲到",
+      cover: "/broswedding.jpg",
+      path: "/video-collection/broswedding"
     },
   ];
   const othervideos = [
@@ -232,8 +297,6 @@ function VideoCollection() {
           </div>
         </div>
       </section>
-
-      <div className="music-page"></div>
       <Logo />
       <Footer />
     </div>
