@@ -10,7 +10,7 @@ function OceanMusic() {
   const { theme } = useContext(ThemeContext);
   const { t } = useTranslation();
   return (
-    <div className="music-detail-page" style={{ background: theme.gradient }}>
+    <div className="music-detail-page" style={{ background: theme.background }}>
       {/* 頁面頭部 */}
       <div className="relative w-full">
         <img
@@ -75,7 +75,7 @@ function OceanMusic() {
           loading="lazy"
         ></iframe>
       </div>
-      <div className="music-page"></div>
+      
       <Logo />
       <Footer />
     </div>

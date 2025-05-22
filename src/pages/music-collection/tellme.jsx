@@ -10,7 +10,7 @@ function TellmeMusic() {
   const { theme } = useContext(ThemeContext);
   const { t } = useTranslation();
   return (
-    <div className="music-detail-page" style={{ background: theme.gradient }}>
+    <div className="music-detail-page" style={{ background: theme.background }}>
       {/* 頁面頭部 */}
       <div className="relative w-full">
         <img
@@ -52,16 +52,16 @@ function TellmeMusic() {
         </nav>
       </div>
       {/* 專輯內容 */}
-      <div className="music-detail-page">
-        <div className="music-detail-content">
+      <div className="music-detail-content text-center px-4">
           <img
             src="/tellme.jpeg"
             alt="Tell Me ft. Drordie Cover"
-            className="music-cover"
+            className="music-cover mx-auto"
           />
           <h1>Tell Me ft. Drordie</h1>
-          <p>這裡是介紹內容...</p>
+          <p className="album-description">這裡是介紹內容...</p>
           <iframe
+            className="mx-auto"
             width="560"
             height="315"
             src="https://www.youtube.com/embed/aEEa6C_J6uM?si=dDy_tDCOBDYU4yLn"
@@ -81,7 +81,7 @@ function TellmeMusic() {
         <Logo />
         <Footer />
       </div>
-    </div>
+    
   );
 }
 

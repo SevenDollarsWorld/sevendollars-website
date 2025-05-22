@@ -7,6 +7,14 @@ body {
   background-color: #b0e0e6;
 }
 
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--gradient); /* 用 style 注入 */
+  pointer-events: none;
+  z-index: 1;
+}
+
 .album-description {
   white-space: pre-wrap; /* 讓 \n 換行 */
   line-height: 1.6;       /* 行距看起來舒服一點 */
@@ -387,12 +395,14 @@ footer.home-footer img:hover {
 }
 
 .common-footer {
+  background-color: #1A2238; /* 或用 theme.background */
+  padding: 20px 0;
+  margin-top: 60px;
   display: flex;
   justify-content: center;
   gap: 30px;
-  padding: 10px 0;
-  margin-top: 60px;
 }
+
 
 .common-footer img {
   width: 32px;
@@ -401,7 +411,7 @@ footer.home-footer img:hover {
 }
 
 .common-footer img:hover {
-  filter: brightness(1.2);
+  filter: brightness(1.2) drop-shadow(0 0 6px rgba(255, 255, 255, 0.5));
   transform: scale(1.1);
 }
 

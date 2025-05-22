@@ -14,7 +14,7 @@ function About() {
   const { t } = useTranslation();
   return (
     
-    <div className="basic-page" style={{ background: theme.gradient }}>
+    <div className="basic-page" style={{ background: theme.background }}>
       
       <div className="header-banner">
         

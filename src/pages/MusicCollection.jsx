@@ -155,21 +155,28 @@ function MusicCollection() {
       </div>
 
       <div
-        style={{ background: theme.gradient }}
+        style={{ background: theme.background }}
         className="min-h-screen px-4 sm:px-6 md:px-12 py-10 text-zinc-100"
       >
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-10">
           {t("musicCollection.albums")}
         </h2>
-        
+
         <div className="flex flex-wrap justify-center gap-6 mb-15">
           {albums.map((album, index) => (
             <Link
               key={index}
               to={album.path}
               className="w-[45%] sm:w-[30%] md:w-[22%] lg:w-[23%]"
+
             >
-              <div className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all">
+              <div
+                className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all text-white"
+                style={{
+                  background: theme.gradient,
+                  textShadow: "0 1px 4px rgba(0,0,0,0.6)"
+                }}
+              >
                 <img
                   src={album.cover}
                   alt={album.title}
@@ -192,7 +199,14 @@ function MusicCollection() {
               to={single.path}
               className="w-[45%] sm:w-[30%] md:w-[22%] lg:w-[23%]"
             >
-              <div className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all">
+              <div
+                className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all text-white"
+                style={{
+                  background: theme.gradient,
+                  textShadow: "0 1px 4px rgba(0,0,0,0.6)"
+                }}
+              >
+
                 <img
                   src={single.cover}
                   alt={single.title}
@@ -206,8 +220,8 @@ function MusicCollection() {
           ))}
         </div>
         <Logo />
-      <Footer />
-        
+        <Footer />
+
       </div>
     </>
   );

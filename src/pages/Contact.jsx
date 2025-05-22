@@ -10,7 +10,7 @@ function Contact() {
   const { theme } = useContext(ThemeContext);
   const { t } = useTranslation();
   return (
-    <div className="basic-page" style={{ background: theme.gradient }}>
+    <div className="basic-page" style={{ background: theme.background }}>
       <div className="header-banner">
         <img
           src={theme.headerBg}

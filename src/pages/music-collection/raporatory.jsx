@@ -90,7 +90,6 @@ function RaporatoryMusic() {
           ></iframe>
         </div>
       </div>
-      <div className="music-page"></div>
       <Logo />
       <Footer />
     </div>

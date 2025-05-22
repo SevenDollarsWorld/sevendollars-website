@@ -10,7 +10,7 @@ function ImdoneMusic() {
   const { theme } = useContext(ThemeContext);
     const { t } = useTranslation();
     return (
-    <div className="music-detail-page" style={{ background: theme.gradient }}>
+    <div className="music-detail-page" style={{ background: theme.background }}>
         {/* 頁面頭部 */}
         <div className="relative w-full">
           <img
@@ -53,16 +53,16 @@ function ImdoneMusic() {
           </nav>
         </div>
       {/* 專輯內容 */}
-      <div className="music-detail-page">
-        <div className="music-detail-content">
+      <div className="music-detail-content text-center px-4">
           <img
             src="/imdonecover.jpg"
             alt="I'm Done Cover"
-            className="music-cover"
+            className="music-cover mx-auto"
           />
           <h1>I'm Done</h1>
-          <p>這裡是介紹內容...</p>
+          <p className="album-description">這裡是介紹內容...</p>
           <iframe
+            className="mx-auto"
             width="560"
             height="315"
             src="https://www.youtube.com/embed/sgkr8BBtpyI?si=x2NrtHb5B8lW_Yj9"
@@ -78,11 +78,11 @@ function ImdoneMusic() {
             loading="lazy"
           ></iframe>
         </div>
-        <div className="music-page"></div>
+        
         <Logo />
         <Footer />
       </div>
-    </div>
+    
   );
 }
 

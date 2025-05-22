@@ -81,7 +81,6 @@ function SPUMusic() {
           ></iframe>
         </div>
       </div>
-      <div className="music-page"></div>
       <Logo />
     <Footer />
     </div>

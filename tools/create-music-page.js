@@ -61,6 +61,7 @@ function ${componentName}Music() {
 
         <div className="embed-section">
           <iframe
+            className="mx-auto"
             width="100%"
             height="315"
             src="${youtube}"
@@ -75,6 +76,7 @@ function ${componentName}Music() {
 
         <div className="embed-section">
           <iframe
+            className="mx-auto"
             style={{ borderRadius: '12px' }}
             src="${spotify}"
             width="100%"
@@ -86,8 +88,6 @@ function ${componentName}Music() {
           ></iframe>
         </div>
       </div>
-
-      <div className="music-page"></div>
       <Logo />
       <Footer />
     </div>

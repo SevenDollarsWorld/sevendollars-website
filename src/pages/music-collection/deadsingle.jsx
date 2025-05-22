@@ -10,7 +10,7 @@ function DeadsingleMusic() {
   const { theme } = useContext(ThemeContext);
   const { t } = useTranslation();
   return (
-    <div className="music-detail-page" style={{ background: theme.gradient }}>
+    <div className="music-detail-page" style={{ background: theme.background }}>
       {/* 頁面頭部 */}
       <div className="relative w-full">
         <img
@@ -52,12 +52,13 @@ function DeadsingleMusic() {
         </nav>
       </div>
       {/* 專輯內容 */}
-      <div className="music-detail-page">
-        <div className="music-detail-content">
-          <img src="/dead.jpg" alt="彌留 Cover" className="music-cover" />
+      <div className="music-detail-content text-center px-4">
+        
+          <img src="/dead.jpg" alt="彌留 Cover" className="music-cover mx-auto" />
           <h1>彌留</h1>
-          <p>這裡是介紹內容...</p>
+          <p className="album-description">這裡是介紹內容...</p>
           <iframe
+            className="mx-auto"
             width="560"
             height="315"
             src="https://www.youtube.com/embed/QXIm9EK_PCQ?si=bKzN0nkejUlWIsNf"
@@ -73,10 +74,10 @@ function DeadsingleMusic() {
             loading="lazy"
           ></iframe>
         </div>
-        <div className="music-page"></div>
+        
         <Logo />
         <Footer />
-      </div>
+      
     </div>
   );
 }

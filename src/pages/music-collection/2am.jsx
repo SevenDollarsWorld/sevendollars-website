@@ -10,7 +10,7 @@ function TwoamMusic() {
   const { theme } = useContext(ThemeContext);
   const { t } = useTranslation();
   return (
-    <div className="music-detail-page" style={{ background: theme.gradient }}>
+    <div className="music-detail-page" style={{ background: theme.background }}>
       {/* 頁面頭部 */}
       <div className="relative w-full">
         <img
@@ -52,31 +52,32 @@ function TwoamMusic() {
         </nav>
       </div>
       {/* 專輯內容 */}
-      <div className="music-detail-page">
-        <div className="music-detail-content">
-          <img src="/2am.jpg" alt="2 AM Cover" className="music-cover" />
-          <h1>2 AM</h1>
-          <p>這裡是介紹內容...</p>
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/nyUU-HgpFgg?si=qp5J8Ir0lkg6UWlS"
-            frameBorder="0"
-            allowFullScreen
-          ></iframe>
-          <iframe
-            style={{ borderRadius: "12px" }}
-            src="https://open.spotify.com/embed/album/5dUhumKL76MSMc1WFR923U?utm_source=generator"
-            width="100%"
-            height="352"
-            frameBorder="0"
-            loading="lazy"
-          ></iframe>
-        </div>
-        <div className="music-page"></div>
-        <Logo />
-        <Footer />
+      <div className="music-detail-content text-center px-4">
+
+        <img src="/2am.jpg" alt="2 AM Cover" className="music-cover mx-auto" />
+        <h1>2 AM Music Video</h1>
+        <p className="album-description">這裡是介紹內容...</p>
+        <iframe
+          className="mx-auto"
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/nyUU-HgpFgg?si=qp5J8Ir0lkg6UWlS"
+          frameBorder="0"
+          allowFullScreen
+        ></iframe>
+        <iframe
+          style={{ borderRadius: "12px" }}
+          src="https://open.spotify.com/embed/album/5dUhumKL76MSMc1WFR923U?utm_source=generator"
+          width="100%"
+          height="352"
+          frameBorder="0"
+          loading="lazy"
+        ></iframe>
       </div>
+      
+      <Logo />
+      <Footer />
+
     </div>
   );
 }
