@@ -207,6 +207,8 @@ function App() {
   <Route path="/video-collection/tripledance" element={<TripledanceVideo />} />
 
   <Route path="/video-collection/firstrolex" element={<FirstrolexVideo />} />
+
+  <Route path="/video-collection/GTA" element={<GTAVideo />} />
 </Routes>
       </div>
     </ThemeContext.Provider>
@@ -258,3 +260,4 @@ import SpuseriespartoneVideo from './pages/video-collection/spuseriespartone';
 import LuthercoverVideo from './pages/video-collection/luthercover';
 import TripledanceVideo from './pages/video-collection/tripledance';
 import FirstrolexVideo from './pages/video-collection/firstrolex';
+import GTAVideo from './pages/video-collection/GTA';

@@ -118,6 +118,11 @@ function VideoCollection() {
   ];
   const funnyvideos = [
     {
+      title: "舞蹈前導片GTA模仿",
+      cover: "/gta.jpg",
+      path: "/video-collection/GTA"
+    },
+    {
       title: "Luther Mandarin Cover",
       cover: "/luthermand.jpg",
       path: "/video-collection/luthercover"
