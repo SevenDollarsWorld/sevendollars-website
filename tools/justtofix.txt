@@ -1,4 +1,3 @@
 node create-music-page.js --type=single --slug=meteor --title="Meteor" --cover=meteor.jpg --youtube="https://www.youtube.com/embed/6ZvkRApbIZk?si=iza4UszxvDd2rDbZ" --spotify="https://open.spotify.com/embed/album/2JSo7uvGWE1XCWAx3rJ0ft?utm_source=generator"
 
-node create-video-page.js --slug=secretofindustry --title="POV:業界機密 我們都知道我們要的是什麼客戶" --cover=secretofindustry.jpg --instagram="https://www.instagram.com/reel/DCg55gix-su/?utm_source=ig_embed&amp;utm_campaign=loading" --type=funny
-
+node create-video-page.js --slug=spuseriespartone --title="SPU Series EP.1" --cover=staywithyoureel.jpg --instagram="https://www.instagram.com/reel/C2pKZ5urTx8/?utm_source=ig_embed&amp;utm_campaign=loading" --type=music

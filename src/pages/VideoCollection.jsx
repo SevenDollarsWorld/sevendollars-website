@@ -11,7 +11,6 @@ function VideoCollection() {
   const { theme } = useContext(ThemeContext);
   const { t } = useTranslation();
   const musicvideos = [
-
     {
       title: "西門發送專輯企劃 Edit By YB",
       cover: "/ximen.jpg",
@@ -47,10 +46,18 @@ function VideoCollection() {
       cover: "/badhabitremix.jpg",
       path: "/video-collection/bhremix"
     },
-
   ];
   const dancevideos = [
-
+    {
+      title: "第一塊勞Choreography",
+      cover: "/firstrolex.jpg",
+      path: "/video-collection/firstrolex"
+    },
+    {
+      title: "三倍！Choreography",
+      cover: "/oldman.jpg",
+      path: "/video-collection/tripledance"
+    },
     {
       title: "Seven To Smoke Dance Challenge",
       cover: "/seventosmoke.jpg",
@@ -110,6 +117,11 @@ function VideoCollection() {
     },
   ];
   const funnyvideos = [
+    {
+      title: "Luther Mandarin Cover",
+      cover: "/luthermand.jpg",
+      path: "/video-collection/luthercover"
+    },
 
     {
       title: "POV:業界機密 我們都知道我們要的是什麼客戶",

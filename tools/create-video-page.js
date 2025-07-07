@@ -62,7 +62,7 @@ function ${componentName}Video() {
   }, []);
 
   return (
-    <div className="video-detail-page" style={{ background: theme.gradient }}>
+    <div className="video-detail-page" style={{ background: theme.background }}>
       <div className="relative w-full">
         <img
           src={theme.headerBg}
@@ -89,9 +89,8 @@ function ${componentName}Video() {
         </nav>
       </div>
 
-      <div className="video-detail-content text-center px-4">
-        <h1>${title}</h1>
-        <p>{t("videoCollection.detailHint")}</p>
+      <div className="video-detail-content flex flex-col items-center px-4">
+        
 
         <blockquote
           className="instagram-media"
@@ -99,6 +98,9 @@ function ${componentName}Video() {
           data-instgrm-version="14"
           style={{ margin: "0 auto", maxWidth: "540px" }}
         ></blockquote>
+        <script async src="//www.instagram.com/embed.js"></script>
+        <h1 className="text-xl sm:text-2xl font-bold mt-6 text-center">${title}</h1>
+        <p className="text-center mt-2">{t("videoCollection.detailHint")}</p>
       </div>
 
       <Logo />

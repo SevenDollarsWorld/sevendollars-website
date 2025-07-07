@@ -201,6 +201,12 @@ function App() {
   <Route path="/video-collection/euphoriadance" element={<EuphoriadanceVideo />} />
 
   <Route path="/video-collection/spuseriespartone" element={<SpuseriespartoneVideo />} />
+
+  <Route path="/video-collection/luthercover" element={<LuthercoverVideo />} />
+
+  <Route path="/video-collection/tripledance" element={<TripledanceVideo />} />
+
+  <Route path="/video-collection/firstrolex" element={<FirstrolexVideo />} />
 </Routes>
       </div>
     </ThemeContext.Provider>
@@ -249,3 +255,6 @@ import TdatnreelsVideo from './pages/video-collection/tdatnreels';
 import BhremixVideo from './pages/video-collection/bhremix';
 import EuphoriadanceVideo from './pages/video-collection/euphoriadance';
 import SpuseriespartoneVideo from './pages/video-collection/spuseriespartone';
+import LuthercoverVideo from './pages/video-collection/luthercover';
+import TripledanceVideo from './pages/video-collection/tripledance';
+import FirstrolexVideo from './pages/video-collection/firstrolex';
