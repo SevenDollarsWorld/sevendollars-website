@@ -60,9 +60,9 @@ function RaporatoryMusic() {
           alt="Raporatory Album Cover"
           className="music-cover mx-auto"
         />
-        <h1>{t("musicCollectionAlbum.spuTitle")}</h1>
+        <h1>{t("musicCollectionAlbum.raporatoryTitle")}</h1>
         <p className="album-description">
-          {t("musicCollectionAlbum.spuContent")}
+          {t("musicCollectionAlbum.raporatoryContent")}
         </p>
 
         <div className="embed-section">

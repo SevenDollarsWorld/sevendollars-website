@@ -52,8 +52,8 @@ function Contact() {
       </div>
 
       <div className="basic-content">
-        <h1>Contact</h1>
-        <p></p>
+        <h1>{t("contact")}</h1>
+        <p className="whitespace-pre-line">{t("contactInfo.info")}</p>
       </div>
       <Logo />
       <Footer />

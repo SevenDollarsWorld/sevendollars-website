@@ -1,3 +1,7 @@
 node create-music-page.js --type=single --slug=meteor --title="Meteor" --cover=meteor.jpg --youtube="https://www.youtube.com/embed/6ZvkRApbIZk?si=iza4UszxvDd2rDbZ" --spotify="https://open.spotify.com/embed/album/2JSo7uvGWE1XCWAx3rJ0ft?utm_source=generator"
 
-node create-video-page.js --slug=spuseriespartone --title="SPU Series EP.1" --cover=staywithyoureel.jpg --instagram="https://www.instagram.com/reel/C2pKZ5urTx8/?utm_source=ig_embed&amp;utm_campaign=loading" --type=music
+node create-video-page.js --slug=luthercover --title="Luther Mandarin Cover" --cover=luthermandarin.jpg --instagram="https://www.instagram.com/reel/DKhFf2Pz3Mx/?utm_source=ig_embed&amp;utm_campaign=loading" --type=music
+
+node create-video-page.js --slug=firstrolex --title="第一塊勞Choreography" --cover=firstrolex.jpg --instagram="https://www.instagram.com/reel/DLZm7qLzmuC/?utm_source=ig_embed&amp;utm_campaign=loading" --type=dance
+
+node create-video-page.js --slug=GTA --title="舞蹈前導片GTA模仿" --cover=gta.jpg --instagram="https://www.instagram.com/reel/DJ_fbedTieZ/?utm_source=ig_embed&amp;utm_campaign=loading" --type=funny

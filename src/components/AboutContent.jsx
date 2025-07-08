@@ -27,11 +27,11 @@ const sections = [
   },
   {
     bg: "/about/smallconcert.jpg",
-    text: "在人群中尋找共鳴，在耳機裡找回自己。",
+    textkey: "aboutContent.partSix"
   },
   {
     bg: "/about/smallconcertending.jpg",
-    text: "故事還沒結束，這只是七元的其中一頁。",
+    textkey: "aboutContent.partSeven"
   },
 ];
 
