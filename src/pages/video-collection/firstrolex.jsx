@@ -61,7 +61,7 @@ function FirstrolexVideo() {
         ></blockquote>
         <script async src="//www.instagram.com/embed.js"></script>
         <h1 className="text-xl sm:text-2xl font-bold mt-6 text-center">第一塊勞Choreography</h1>
-        <p className="text-center mt-2">{t("videoCollection.detailHint")}</p>
+        <p className="text-center mt-2">{t("videoCollections.firstRolex")}</p>
       </div>
 
       <Logo />
